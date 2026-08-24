@@ -1,0 +1,16 @@
+.menuButton { display: none; border: 1px solid #ffffff65; background: transparent; color: inherit; padding: .65rem .8rem; font: inherit; font-size: .65rem; letter-spacing: .14em; }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee div { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+@media (max-width: 800px) {
+  .menuButton { display: block; }
+  .nav .navCta { display: none; }
+  .navlinks { display: none; position: absolute; top: 74px; left: 0; right: 0; padding: 1.4rem 6vw; flex-direction: column; gap: 1.3rem; background: #071514f5; border-bottom: 1px solid #36504b; }
+  .navlinks.open { display: flex; }
+}
