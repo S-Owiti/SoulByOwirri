@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Comic+Neue:wght@400;700&display=swap');
 
 /* ==================================================
    OWIRRI COLOUR SYSTEM
@@ -21,10 +21,57 @@
   --border: rgba(243, 238, 230, 0.18);
   --border-strong: rgba(243, 238, 230, 0.4);
 
-  --font-body: 'DM Sans', sans-serif;
-  --font-display: 'Italiana', serif;
+  --font-body: 'Comic Neue', cursive;
+  --font-display: 'Archivo Black', sans-serif;
 }
 
+/* ==================================================
+   FIXED SITE TYPOGRAPHY
+   ================================================== */
+
+html,
+body,
+p,
+a,
+span,
+button,
+input,
+textarea,
+select,
+label,
+li,
+figcaption {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.wordmark,
+.siteTitle,
+.sectionTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+body {
+  font-weight: 400;
+}
+
+strong,
+b,
+.button,
+.navlinks,
+.navCta,
+.menuButton,
+.artistRole,
+.kicker,
+.sectionNum {
+  font-weight: 700;
+}
 
 /* ==================================================
    RESET AND GLOBAL STYLES
