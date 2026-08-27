@@ -454,77 +454,415 @@ button {
 
 
 /* ==================================================
-   MUSIC / LATEST RELEASE
+   THE SOUND
    ================================================== */
 
-.release {
+.sound {
   background: var(--surface);
 }
 
-.releaseGrid {
+
+/* Featured release */
+
+.featuredRelease {
   display: grid;
-  grid-template-columns: minmax(280px, 0.9fr) 1.1fr;
-  gap: 8vw;
+  grid-template-columns: minmax(320px, 0.9fr) 1.1fr;
+  gap: clamp(3rem, 7vw, 7rem);
   align-items: center;
+
+  max-width: 1250px;
+  margin: 0 auto;
 }
 
-.releaseArt {
+.featuredReleaseArt {
   position: relative;
+  overflow: hidden;
+  background: var(--ink);
+  border: 1px solid var(--border);
 }
 
-.releaseArt img {
-  height: 620px;
-  object-fit: cover;
-  filter: saturate(0.85) contrast(1.06);
-}
-
-.releaseArt::after {
+.featuredReleaseArt::after {
   content: '';
 
   position: absolute;
-  inset: 18px;
+  inset: 16px;
 
   border: 1px solid rgba(230, 184, 74, 0.55);
   pointer-events: none;
 }
 
-.releaseArt span {
+.featuredReleaseArt img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  transition: transform 500ms ease;
+}
+
+.featuredReleaseArt:hover img {
+  transform: scale(1.025);
+}
+
+.latestBadge {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   bottom: 2rem;
   left: 2rem;
 
-  padding: 0.6rem 0.8rem;
+  padding: 0.7rem 0.9rem;
 
   color: var(--foam);
   background: var(--red);
 
-  font-size: 0.6rem;
-  letter-spacing: 0.2em;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
 }
 
-.releaseCopy h2 {
-  margin: 0.5rem 0 1.5rem;
-  font-size: clamp(5rem, 9vw, 9rem);
+.featuredReleaseContent h2 {
+  margin: 0.6rem 0 1.5rem;
+
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 7.5vw, 7.5rem);
+  font-weight: 400;
+  line-height: 0.88;
+  letter-spacing: -0.045em;
 }
 
-.releaseCopy > p {
-  max-width: 570px;
+.featuredReleaseContent h2 span {
+  display: block;
+  margin-top: 1rem;
+
+  color: var(--gold);
+
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.featuredReleaseDescription {
+  max-width: 590px;
+  margin-bottom: 2rem;
 
   color: var(--mist);
-  font-size: 0.95rem;
+
+  font-size: 1.05rem;
   line-height: 1.8;
 }
 
-.releaseCopy .quote {
-  padding-left: 1.5rem;
+.featuredReleaseActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+
+/* Countdown */
+
+.releaseCountdown {
+  max-width: 590px;
+  padding: 1.5rem;
+
+  background: var(--ink);
+  border-left: 4px solid var(--red);
+}
+
+.countdownLabel {
+  margin: 0 0 1rem;
+
+  color: var(--gold);
+
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.countdownUnits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(55px, 1fr));
+  gap: 0.75rem;
+}
+
+.countdownUnit {
+  padding-right: 0.75rem;
+  border-right: 1px solid var(--border);
+}
+
+.countdownUnit:last-child {
+  padding-right: 0;
+  border-right: 0;
+}
+
+.countdownUnit strong {
+  display: block;
 
   color: var(--foam);
-  border-left: 2px solid var(--red);
 
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: clamp(1.7rem, 3.4vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.countdownUnit span {
+  display: block;
+  margin-top: 0.5rem;
+
+  color: var(--mist);
+
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.releaseCountdown.isReleased {
+  padding: 1.5rem 1.75rem;
+  background: var(--red);
+  border-left: 0;
+}
+
+.releaseCountdown.isReleased p {
+  margin: 0;
+
+  color: var(--foam);
+
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 2.2rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+
+/* Recent releases */
+
+.recentReleases {
+  max-width: 1400px;
+  margin: clamp(6rem, 10vw, 10rem) auto 0;
+}
+
+.recentReleasesHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.recentReleasesHeader h3 {
+  margin: 0.5rem 0 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 4rem);
+  font-weight: 400;
+}
+
+.recentReleasesHeader > p {
+  margin: 0;
+
+  color: var(--mist);
+
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.releaseThread {
+  display: grid;
+  grid-auto-columns: minmax(220px, 1fr);
+  grid-auto-flow: column;
+  gap: 1.25rem;
+
+  overflow-x: auto;
+  padding: 0.25rem 0 1.5rem;
+
+  scroll-snap-type: x mandatory;
+  scrollbar-color: var(--red) var(--ink);
+  scrollbar-width: thin;
+}
+
+.releaseThread::-webkit-scrollbar {
+  height: 7px;
+}
+
+.releaseThread::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+
+.releaseThread::-webkit-scrollbar-thumb {
+  background: var(--red);
+}
+
+.releaseCard {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.releaseCardArt {
+  position: relative;
+  overflow: hidden;
+
+  aspect-ratio: 1 / 1;
+
+  background: var(--ink);
+  border: 1px solid var(--border);
+}
+
+.releaseCardArt img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    filter 300ms ease,
+    transform 400ms ease;
+}
+
+.releaseCardPlay {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+
+  display: grid;
+  place-items: center;
+
+  width: 42px;
+  height: 42px;
+
+  color: var(--foam);
+  background: var(--red);
+  border-radius: 50%;
+
+  font-size: 1rem;
+
+  transform: translateY(8px);
+  opacity: 0;
+
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+.releaseCard:hover .releaseCardArt img,
+.releaseCard:focus-visible .releaseCardArt img {
+  filter: brightness(0.72);
+  transform: scale(1.035);
+}
+
+.releaseCard:hover .releaseCardPlay,
+.releaseCard:focus-visible .releaseCardPlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.releaseCardDetails {
+  padding: 1rem 0;
+}
+
+.releaseCardDetails h4 {
+  margin: 0;
+
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.releaseCardDetails p {
+  margin: 0.45rem 0 0;
+
+  color: var(--mist);
+
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.previousReleases {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+
+/* Sound section: tablet and mobile */
+
+@media (max-width: 800px) {
+  .featuredRelease {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredReleaseArt {
+    max-width: 620px;
+  }
+
+  .featuredReleaseContent h2 {
+    font-size: clamp(4rem, 15vw, 6.5rem);
+  }
+
+  .recentReleasesHeader {
+    display: block;
+  }
+
+  .recentReleasesHeader > p {
+    margin-top: 1rem;
+  }
+
+  .releaseThread {
+    grid-auto-columns: minmax(240px, 72vw);
+  }
+}
+
+
+/* Sound section: small mobile */
+
+@media (max-width: 480px) {
+  .featuredReleaseArt::after {
+    inset: 10px;
+  }
+
+  .latestBadge {
+    bottom: 1.25rem;
+    left: 1.25rem;
+  }
+
+  .countdownUnits {
+    gap: 0.45rem;
+  }
+
+  .countdownUnit {
+    padding-right: 0.45rem;
+  }
+
+  .countdownUnit strong {
+    font-size: 1.55rem;
+  }
+
+  .countdownUnit span {
+    font-size: 0.48rem;
+    letter-spacing: 0.08em;
+  }
+
+  .featuredReleaseActions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .featuredReleaseActions .button {
+    text-align: center;
+  }
+
+  .releaseThread {
+    grid-auto-columns: 82vw;
+  }
 }
 
 

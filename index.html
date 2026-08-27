@@ -47,10 +47,11 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="styles.css?v=2">
-  <link rel="stylesheet" href="interactions.css?v=2">
+  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="interactions.css?v=3">
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=3" defer></script>
+
 </head>
 
 <body>
@@ -141,46 +142,211 @@
     </section>
 
 
-    <!-- Music -->
-    <section class="release section reveal" id="music">
+    <!-- The Sound -->
+    <section class="sound section reveal" id="music">
       <div class="sectionNum">01 / THE SOUND</div>
 
-      <div class="releaseGrid">
-        <div class="releaseArt">
+      <!-- Featured release -->
+      <article class="featuredRelease">
+        <div class="featuredReleaseArt">
           <img
-            src="https://owirrimuziki.wordpress.com/wp-content/uploads/2026/03/fr_tbc_2026__25.jpg?w=1200"
-            alt="Owirri in the BLACK era"
+            src="assets/images/attention-cover.JPG"
+            alt="Attention by Owirri featuring Zeefu"
           >
-          <span>LATEST ERA</span>
+
+          <span class="latestBadge">LATEST RELEASE</span>
         </div>
 
-        <div class="releaseCopy">
-          <p class="kicker">LATEST RELEASE</p>
+        <div class="featuredReleaseContent">
+          <p class="kicker">OUT 28 AUGUST 2026</p>
 
-          <h2>BLACK</h2>
+          <h2>
+            Attention
+            <span>ft Zeefu</span>
+          </h2>
 
-          <p class="quote">
-            A cushion to bounce back on when that life cycle repeats itself.
+          <p class="featuredReleaseDescription">
+            A vibrant collision of desire, confidence and magnetic energy.
+            Owirri and Zeefu step into a vivid sonic exchange made to be
+            felt loudly.
           </p>
 
-          <p>
-            Music for the aftermath. The quiet scene after the noise, where
-            vulnerability becomes self-respect and transformation gets its
-            own rhythm.
-          </p>
+          <!-- Release countdown -->
+          <div
+            class="releaseCountdown"
+            id="attentionCountdown"
+            aria-live="polite"
+          >
+            <p class="countdownLabel">ATTENTION ARRIVES IN</p>
 
+            <div class="countdownUnits">
+              <div class="countdownUnit">
+                <strong id="countdownDays">00</strong>
+                <span>Days</span>
+              </div>
+
+              <div class="countdownUnit">
+                <strong id="countdownHours">00</strong>
+                <span>Hours</span>
+              </div>
+
+              <div class="countdownUnit">
+                <strong id="countdownMinutes">00</strong>
+                <span>Minutes</span>
+              </div>
+
+              <div class="countdownUnit">
+                <strong id="countdownSeconds">00</strong>
+                <span>Seconds</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="featuredReleaseActions">
+            <a
+              class="button primaryButton"
+              href="https://ditto.fm/attention-owirri"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Stream Now ↗
+            </a>
+
+            <a
+              class="button outline"
+              href="https://youtu.be/NU4_bmQPO60"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Watch on YouTube ↗
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Recent releases -->
+      <div class="recentReleases">
+        <div class="recentReleasesHeader">
+          <div>
+            <p class="kicker">MORE FROM OWIRRI</p>
+            <h3>Recent releases</h3>
+          </div>
+
+          <p>Newest first · Swipe to explore</p>
+        </div>
+
+        <div class="releaseThread">
+
+          <!-- Nobody But You -->
+          <a
+            class="releaseCard"
+            href="https://open.spotify.com/artist/6coekACP7p61nFZSkHqpFH"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Listen to Nobody But You"
+          >
+            <div class="releaseCardArt">
+              <img
+                src="assets/images/nobody-but-you.PNG"
+                alt="Nobody But You by Owirri"
+                loading="lazy"
+              >
+
+              <span class="releaseCardPlay" aria-hidden="true">↗</span>
+            </div>
+
+            <div class="releaseCardDetails">
+              <h4>Nobody But You</h4>
+              <p>Single</p>
+            </div>
+          </a>
+
+          <!-- BLACK -->
+          <a
+            class="releaseCard"
+            href="https://open.spotify.com/artist/6coekACP7p61nFZSkHqpFH"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Listen to the BLACK EP"
+          >
+            <div class="releaseCardArt">
+              <img
+                src="assets/images/black-ep.PNG"
+                alt="BLACK EP by Owirri"
+                loading="lazy"
+              >
+
+              <span class="releaseCardPlay" aria-hidden="true">↗</span>
+            </div>
+
+            <div class="releaseCardDetails">
+              <h4>BLACK</h4>
+              <p>EP · 2026</p>
+            </div>
+          </a>
+
+          <!-- What Love Looks Like -->
+          <a
+            class="releaseCard"
+            href="https://open.spotify.com/artist/6coekACP7p61nFZSkHqpFH"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Listen to the What Love Looks Like EP"
+          >
+            <div class="releaseCardArt">
+              <img
+                src="assets/images/what-love-looks-like.JPG"
+                alt="What Love Looks Like EP by Owirri"
+                loading="lazy"
+              >
+
+              <span class="releaseCardPlay" aria-hidden="true">↗</span>
+            </div>
+
+            <div class="releaseCardDetails">
+              <h4>What Love Looks Like</h4>
+              <p>EP</p>
+            </div>
+          </a>
+
+          <!-- Color to My Soul -->
+          <a
+            class="releaseCard"
+            href="https://open.spotify.com/artist/6coekACP7p61nFZSkHqpFH"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Listen to Color to My Soul"
+          >
+            <div class="releaseCardArt">
+              <img
+                src="assets/images/color-to-my-soul.JPEG"
+                alt="Color to My Soul by Colosoul and Owirri featuring Project Gemini"
+                loading="lazy"
+              >
+
+              <span class="releaseCardPlay" aria-hidden="true">↗</span>
+            </div>
+
+            <div class="releaseCardDetails">
+              <h4>Color to My Soul</h4>
+              <p>Single</p>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="previousReleases">
           <a
             class="button outline"
-            href="https://linktr.ee/Owirri"
+            href="https://open.spotify.com/artist/6coekACP7p61nFZSkHqpFH"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Choose your platform ↗
+            Explore Previous Releases ↗
           </a>
         </div>
       </div>
     </section>
-
 
     <!-- About -->
     <section class="story section reveal" id="story">
