@@ -1,16 +1,145 @@
-.menuButton { display: none; border: 1px solid #ffffff65; background: transparent; color: inherit; padding: .65rem .8rem; font: inherit; font-size: .65rem; letter-spacing: .14em; }
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
-.reveal.visible { opacity: 1; transform: none; }
+/* ==================================================
+   REVEAL ANIMATIONS
+   JavaScript adds the "visible" or "is-visible" class.
+   ================================================== */
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .marquee div { animation: none; }
-  .reveal { opacity: 1; transform: none; transition: none; }
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+
+  transition:
+    opacity 800ms ease,
+    transform 800ms ease;
 }
 
+.reveal.visible,
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ==================================================
+   FEATURED IMAGE ENTRANCE
+   ================================================== */
+
+.featuredHeroImage {
+  opacity: 0;
+  transform: scale(1.025);
+
+  animation: featuredImageEntrance 1.2s ease forwards;
+}
+
+@keyframes featuredImageEntrance {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ==================================================
+   INTRODUCTION ENTRANCE
+   ================================================== */
+
+.artistIntroduction h1,
+.siteTagline,
+.artistRole,
+.primaryButton {
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: introductionEntrance 700ms ease forwards;
+}
+
+.artistIntroduction h1 {
+  animation-delay: 120ms;
+}
+
+.siteTagline {
+  animation-delay: 260ms;
+}
+
+.artistRole {
+  animation-delay: 380ms;
+}
+
+.primaryButton {
+  animation-delay: 500ms;
+}
+
+@keyframes introductionEntrance {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ==================================================
+   INTERACTIVE FOCUS STATES
+   ================================================== */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 5px;
+}
+
+
+/* ==================================================
+   NAVIGATION MENU
+   Supports either "open" or "is-open" from script.js.
+   ================================================== */
+
 @media (max-width: 800px) {
-  .menuButton { display: block; }
-  .nav .navCta { display: none; }
-  .navlinks { display: none; position: absolute; top: 74px; left: 0; right: 0; padding: 1.4rem 6vw; flex-direction: column; gap: 1.3rem; background: #071514f5; border-bottom: 1px solid #36504b; }
-  .navlinks.open { display: flex; }
+  .navlinks.open,
+  .navlinks.is-open {
+    animation: mobileMenuEntrance 220ms ease forwards;
+  }
+
+  @keyframes mobileMenuEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+/* ==================================================
+   ACCESSIBILITY: REDUCED MOTION
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal,
+  .featuredHeroImage,
+  .artistIntroduction h1,
+  .siteTagline,
+  .artistRole,
+  .primaryButton {
+    opacity: 1;
+    transform: none;
+  }
+
+  .marquee div {
+    animation: none;
+  }
 }
