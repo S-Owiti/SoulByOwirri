@@ -47,10 +47,10 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="styles.css?v=7">
-  <link rel="stylesheet" href="interactions.css?v=7">
-
-  <script src="script.js?v=5" defer></script>
+  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="interactions.css?v=8">
+  
+  <script src="script.js?v=8" defer></script>
 
 </head>
 
@@ -83,6 +83,7 @@
         >
           Services ↗
         </a>
+        <a href="#shop">Shop</a>
         
         <a href="#contact">Contact</a>
       </div>
@@ -830,6 +831,100 @@
 
       </div>
     </section>
+
+    <!-- Shop and Support -->
+<section class="shop section reveal" id="shop">
+  <div class="sectionNum">04 / SHOP & SUPPORT</div>
+
+  <div class="shopHeading">
+    <p class="kicker">TAKE A PIECE OF THE UNIVERSE</p>
+
+    <h2>
+      Made with feeling.<br>
+      <i>Kept with love.</i>
+    </h2>
+  </div>
+
+  <div class="shopGrid">
+
+    <!-- Mi Hermosa -->
+    <article class="shopCard merchandiseCard">
+      <div class="shopCardNumber">01</div>
+
+      <div class="shopCardContent">
+        <p class="kicker">MI HERMOSA ART SANCTUARY</p>
+
+        <h3>Wear the art.</h3>
+
+        <p>
+          Explore handmade jewellery and wearable pieces shaped by
+          identity, colour, texture and personal expression.
+        </p>
+
+        <a
+          class="button primaryButton"
+          href="https://theyellowroom.hustlesasa.shop/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit the Shop ↗
+        </a>
+      </div>
+
+      <span class="shopCardWord" aria-hidden="true">SHOP</span>
+    </article>
+
+
+    <!-- Buy Me a Coffee -->
+    <article class="shopCard coffeeCard">
+      <div class="shopCardNumber">02</div>
+
+      <div class="coffeeContent">
+        <div class="coffeeCopy">
+          <p class="kicker">SUPPORT THE ART</p>
+
+          <h3>Buy me a coffee.</h3>
+
+          <p>
+            Enjoying the music, stories or universe? You can support
+            the next creation directly through M-Pesa.
+          </p>
+
+          <div class="tillDetails">
+            <span>BUY GOODS TILL</span>
+            <strong id="tillNumber">4343288</strong>
+            <small>Confirm: Selline Atieno Owiti</small>
+          </div>
+
+          <button
+            class="button copyTillButton"
+            type="button"
+            data-copy-till="4343288"
+          >
+            Copy Till Number
+          </button>
+
+          <p
+            class="copyTillStatus"
+            id="copyTillStatus"
+            aria-live="polite"
+          ></p>
+        </div>
+
+        <div class="coffeeQr">
+          <img
+            src="assets/images/mpesa-till-4343288.png"
+            alt="Official M-Pesa QR code for Buy Goods Till Number 4343288"
+            loading="lazy"
+          >
+
+          <p>Scan with M-Pesa to support.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
 
 
     <!-- Contact -->

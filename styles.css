@@ -2209,6 +2209,253 @@ footer div {
   min-height: 0;
 }
 
+/* ==================================================
+   SHOP AND SUPPORT
+   ================================================== */
+
+.shop {
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(230, 184, 74, 0.12),
+      transparent 32%
+    ),
+    var(--surface);
+}
+
+.shopHeading {
+  max-width: 1400px;
+  margin: 0 auto 4rem;
+}
+
+.shopHeading h2 {
+  max-width: 1100px;
+  margin: 1rem 0 0;
+}
+
+.shopGrid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 1.25rem;
+
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.shopCard {
+  position: relative;
+
+  min-width: 0;
+  padding: clamp(2rem, 5vw, 4.5rem);
+
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.shopCardNumber {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  color: rgba(243, 238, 230, 0.18);
+
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+}
+
+.shopCard h3 {
+  margin: 1rem 0 1.5rem;
+
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.shopCard p {
+  max-width: 560px;
+
+  color: var(--mist);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+
+/* Mi Hermosa card */
+
+.merchandiseCard {
+  display: flex;
+  align-items: flex-end;
+
+  min-height: 650px;
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(196, 33, 24, 0.94),
+      rgba(113, 18, 14, 0.97)
+    );
+}
+
+.merchandiseCard .kicker {
+  color: var(--gold);
+}
+
+.merchandiseCard p {
+  color: rgba(243, 238, 230, 0.82);
+}
+
+.shopCardContent {
+  position: relative;
+  z-index: 2;
+}
+
+.shopCardWord {
+  position: absolute;
+  top: 1rem;
+  left: -0.7rem;
+
+  color: rgba(255, 255, 255, 0.06);
+
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 12vw, 12rem);
+  line-height: 1;
+  writing-mode: vertical-rl;
+}
+
+
+/* Coffee and QR card */
+
+.coffeeCard {
+  display: flex;
+  align-items: center;
+
+  background: var(--ink);
+}
+
+.coffeeContent {
+  display: grid;
+  grid-template-columns: 1fr minmax(230px, 0.8fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: center;
+
+  width: 100%;
+}
+
+.tillDetails {
+  margin: 2rem 0 1.2rem;
+  padding: 1.5rem;
+
+  background: var(--surface);
+  border-left: 4px solid var(--gold);
+}
+
+.tillDetails span,
+.tillDetails small {
+  display: block;
+}
+
+.tillDetails span {
+  color: var(--mist);
+
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.tillDetails strong {
+  display: block;
+  margin: 0.5rem 0;
+
+  color: var(--foam);
+
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.tillDetails small {
+  color: var(--gold);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.copyTillButton {
+  color: var(--ink);
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  cursor: pointer;
+}
+
+.copyTillButton:hover,
+.copyTillButton:focus-visible {
+  color: var(--foam);
+  background: var(--red);
+  border-color: var(--red);
+}
+
+.copyTillStatus {
+  min-height: 1.4rem;
+  margin: 0.7rem 0 0 !important;
+
+  color: var(--gold) !important;
+
+  font-size: 0.72rem !important;
+  font-weight: 700;
+}
+
+.coffeeQr {
+  padding: 0.8rem;
+
+  background: #ffffff;
+  border: 1px solid var(--border);
+}
+
+.coffeeQr img {
+  width: 100%;
+  height: auto;
+}
+
+.coffeeQr p {
+  margin: 0.8rem 0 0;
+
+  color: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+/* Shop responsive */
+
+@media (max-width: 900px) {
+  .shopGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .merchandiseCard {
+    min-height: 480px;
+  }
+}
+
+@media (max-width: 650px) {
+  .coffeeContent {
+    grid-template-columns: 1fr;
+  }
+
+  .coffeeQr {
+    max-width: 420px;
+  }
+
+  .copyTillButton {
+    width: 100%;
+    text-align: center;
+  }
+}
+
   .worldHead {
     display: block;
   }

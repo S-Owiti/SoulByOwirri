@@ -100,3 +100,55 @@ document.querySelector('#year').textContent = new Date().getFullYear();
     }, 1000);
   }
 })();
+
+/* ==================================================
+   COPY M-PESA TILL NUMBER
+   ================================================== */
+
+(() => {
+  const copyTillButton = document.querySelector('[data-copy-till]');
+  const copyTillStatus = document.getElementById('copyTillStatus');
+
+  if (!copyTillButton || !copyTillStatus) {
+    return;
+  }
+
+  const copyTextFallback = (text) => {
+    const temporaryInput = document.createElement('textarea');
+
+    temporaryInput.value = text;
+    temporaryInput.setAttribute('readonly', '');
+    temporaryInput.style.position = 'fixed';
+    temporaryInput.style.opacity = '0';
+
+    document.body.appendChild(temporaryInput);
+    temporaryInput.select();
+
+    document.execCommand('copy');
+    temporaryInput.remove();
+  };
+
+  copyTillButton.addEventListener('click', async () => {
+    const tillNumber = copyTillButton.dataset.copyTill;
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(tillNumber);
+      } else {
+        copyTextFallback(tillNumber);
+      }
+
+      copyTillButton.textContent = 'Till Number Copied ✓';
+      copyTillStatus.textContent =
+        '4343288 copied. Confirm Selline Atieno Owiti before paying.';
+
+      window.setTimeout(() => {
+        copyTillButton.textContent = 'Copy Till Number';
+        copyTillStatus.textContent = '';
+      }, 4000);
+    } catch {
+      copyTillStatus.textContent =
+        'Copy failed. Please enter Till Number 4343288 manually.';
+    }
+  });
+})();
