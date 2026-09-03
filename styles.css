@@ -2235,7 +2235,7 @@ footer div {
 
 .shopGrid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
 
   max-width: 1400px;
@@ -2280,6 +2280,64 @@ footer div {
   line-height: 1.8;
 }
 
+/* Soul by Owirri music store */
+
+.musicStoreCard {
+  display: flex;
+  align-items: flex-end;
+
+  min-height: 650px;
+
+  color: var(--ink);
+
+  background:
+    radial-gradient(
+      circle at 80% 15%,
+      rgba(196, 33, 24, 0.2),
+      transparent 35%
+    ),
+    var(--gold);
+}
+
+.musicStoreCard .kicker {
+  color: var(--red-dark);
+}
+
+.musicStoreCard h3 {
+  color: var(--ink);
+}
+
+.musicStoreCard p {
+  color: rgba(23, 23, 22, 0.78);
+}
+
+.musicStoreCard .shopCardNumber {
+  color: rgba(23, 23, 22, 0.2);
+}
+
+.musicStoreCard .shopCardWord {
+  color: rgba(23, 23, 22, 0.06);
+}
+
+.musicStoreButton {
+  color: var(--foam);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+
+.musicStoreButton:hover,
+.musicStoreButton:focus-visible {
+  color: var(--foam);
+  background: var(--red);
+  border-color: var(--red);
+}
+
+
+/* Let the support card span the full row */
+
+.coffeeCard {
+  grid-column: 1 / -1;
+}
 
 /* Mi Hermosa card */
 
@@ -2436,8 +2494,13 @@ footer div {
     grid-template-columns: 1fr;
   }
 
-  .merchandiseCard {
+  .merchandiseCard,
+  .musicStoreCard {
     min-height: 480px;
+  }
+
+  .coffeeCard {
+    grid-column: auto;
   }
 }
 
