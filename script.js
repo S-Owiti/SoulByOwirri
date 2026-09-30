@@ -185,3 +185,91 @@ document.querySelector("#year").textContent = new Date().getFullYear();
     });
   });
 })();
+
+/* ==================================================
+   FLOATING WEBSITE COMMENT FORM
+   ================================================== */
+
+(() => {
+  const openButton = document.getElementById("openCommentButton");
+  const closeButton = document.getElementById("closeCommentButton");
+  const dialog = document.getElementById("commentDialog");
+  const commentForm = document.getElementById("commentForm");
+  const commentStatus = document.getElementById("commentStatus");
+  const commentPage = document.getElementById("commentPage");
+
+  if (
+    !openButton ||
+    !closeButton ||
+    !dialog ||
+    !commentForm ||
+    !commentStatus
+  ) {
+    return;
+  }
+
+  const openCommentForm = () => {
+    commentStatus.textContent = "";
+
+    if (commentPage) {
+      commentPage.value = window.location.href;
+    }
+
+    dialog.showModal();
+
+    window.setTimeout(() => {
+      document.getElementById("websiteComment")?.focus();
+    }, 100);
+  };
+
+  const closeCommentForm = () => {
+    dialog.close();
+  };
+
+  openButton.addEventListener("click", openCommentForm);
+  closeButton.addEventListener("click", closeCommentForm);
+
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) {
+      closeCommentForm();
+    }
+  });
+
+  commentForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const submitButton = commentForm.querySelector(".commentSubmitButton");
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+    commentStatus.textContent = "";
+
+    try {
+      const response = await fetch(commentForm.action, {
+        method: "POST",
+        body: new FormData(commentForm),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error("Comment submission failed.");
+      }
+
+      commentForm.reset();
+      commentStatus.textContent =
+        "Received. Your comment has entered the universe ✦";
+
+      window.setTimeout(() => {
+        closeCommentForm();
+        commentStatus.textContent = "";
+      }, 1800);
+    } catch (error) {
+      commentStatus.textContent = "That did not send. Please try again.";
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Send to Owirri";
+    }
+  });
+})();
