@@ -149,3 +149,36 @@ document.querySelector("#year").textContent = new Date().getFullYear();
     }
   });
 })();
+
+/* ==================================================
+   COLD BLOODED PACKAGE SELECTION
+   ================================================== */
+
+(() => {
+  const packageButtons = document.querySelectorAll("[data-package]");
+  const packageSelect = document.getElementById("selectedPackage");
+  const purchaseForm = document.getElementById("purchaseForm");
+
+  if (!packageButtons.length || !packageSelect || !purchaseForm) {
+    return;
+  }
+
+  packageButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const selectedPackage = button.dataset.package;
+
+      packageSelect.value = selectedPackage;
+
+      window.setTimeout(() => {
+        purchaseForm.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+
+        packageSelect.focus({
+          preventScroll: true,
+        });
+      }, 100);
+    });
+  });
+})();

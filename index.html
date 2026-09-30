@@ -44,7 +44,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="styles.css?v=9" />
+    <link rel="stylesheet" href="styles.css?v=16" />
     <link rel="stylesheet" href="interactions.css?v=8" />
 
     <script src="script.js?v=8" defer></script>
@@ -840,127 +840,290 @@
         </div>
       </section>
 
-      <!-- Shop and Support -->
-      <section
-        class="shop section reveal waterAtmosphere"
-        id="shop"
+<!-- Cold Blooded Exclusive Listening -->
+<section
+  class="exclusiveShop section reveal waterAtmosphere"
+  id="exclusive-listen"
+>
+  <div class="sectionNum">04 / EXCLUSIVE LISTEN</div>
+  <!-- Cold Blooded listening packages -->
+<div class="listeningRoomIntro">
+  <p class="kicker">CHOOSE YOUR PRIVATE LISTEN</p>
+</div>
+
+<div class="releaseThread exclusiveListenThread">
+
+  <!-- Lead single -->
+  <article class="releaseCard exclusiveReleaseCard">
+    <div class="releaseCardArt">
+      <img
+        src="assets/images/cold-blooded-cover.png"
+        alt="Cold Blooded lead single exclusive listen"
+        loading="lazy"
+      />
+
+      <span class="exclusiveTileNumber">01</span>
+    </div>
+
+    <div class="releaseCardDetails exclusiveCardDetails">
+      <h4>Lead Single</h4>
+      <p>1 unreleased track</p>
+      <strong>KES 888</strong>
+
+      <a
+        class="button exclusiveBuyButton"
+        href="#purchaseForm"
+        data-package="Lead Single — KES 888"
       >
-        <div class="sectionNum">04 / SHOP & SUPPORT</div>
+        Buy Now
+      </a>
+    </div>
+  </article>
 
-        <div class="shopHeading">
-          <p class="kicker">TAKE A PIECE OF THE UNIVERSE</p>
+  <!-- Half album -->
+  <article class="releaseCard exclusiveReleaseCard">
+    <div class="releaseCardArt">
+      <img
+        src="assets/images/cold-blooded-cover.png"
+        alt="Cold Blooded half album exclusive listen"
+        loading="lazy"
+      />
 
-          <h2>
-            Made with feeling.<br />
-            <i>Kept with love.</i>
-          </h2>
+      <span class="exclusiveTileNumber">02</span>
+    </div>
+
+    <div class="releaseCardDetails exclusiveCardDetails">
+      <h4>Half Album</h4>
+      <p>6 unreleased tracks</p>
+      <strong>KES 3,000</strong>
+
+      <a
+        class="button exclusiveBuyButton"
+        href="#purchaseForm"
+        data-package="Half Album — KES 3,000"
+      >
+        Buy Now
+      </a>
+    </div>
+  </article>
+
+  <!-- Full album -->
+  <article class="releaseCard exclusiveReleaseCard">
+    <div class="releaseCardArt">
+      <img
+        src="assets/images/cold-blooded-cover.png"
+        alt="Cold Blooded full album exclusive listen"
+        loading="lazy"
+      />
+
+      <span class="exclusiveTileNumber">03</span>
+    </div>
+
+    <div class="releaseCardDetails exclusiveCardDetails">
+      <h4>Full Album</h4>
+      <p>12 unreleased tracks</p>
+      <strong>KES 5,000</strong>
+
+      <a
+        class="button exclusiveBuyButton"
+        href="#purchaseForm"
+        data-package="Full Album — KES 5,000"
+      >
+        Buy Now
+      </a>
+    </div>
+  </article>
+</div>
+
+<p class="exclusiveListenNote">
+  Cold Blooded officially arrives on 11 December 2026—but you do not have
+  to wait outside the gates. Choose your listening experience, support the
+  making of Owirri’s debut album, and receive your private tracks within
+  24 hours after payment verification.
+</p>
+
+<div class="otherProducts">
+  <a
+    class="button outline"
+    href="https://soulbyowirri.hustlesasa.shop/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Explore Other Products ↗
+  </a>
+</div>
+
+  <!-- Purchase form -->
+  <div class="purchaseArea" id="purchaseForm">
+    <div class="purchaseInstructions">
+      <p class="kicker">HOW TO ENTER</p>
+
+      <h3>Purchase your private listen.</h3>
+
+      <ol class="purchaseSteps">
+        <li>
+          Choose your Cold Blooded listening package.
+        </li>
+
+        <li>
+          Pay the corresponding amount through M-Pesa Buy Goods.
+        </li>
+
+        <li>
+          Submit your details and M-Pesa confirmation code using the form.
+        </li>
+
+        <li>
+          Your private listening files will be delivered by email within
+          24 hours after payment verification.
+        </li>
+      </ol>
+
+      <div class="purchaseTillDetails">
+        <span>M-PESA BUY GOODS TILL</span>
+        <strong>4343288</strong>
+        <small>Confirm: Selline Atieno Owiti</small>
+      </div>
+
+      <button
+        class="button copyTillButton"
+        type="button"
+        data-copy-till="4343288"
+      >
+        Copy Till Number
+      </button>
+
+      <p
+        class="copyTillStatus"
+        id="copyTillStatus"
+        aria-live="polite"
+      ></p>
+
+      <div class="purchaseQr">
+        <img
+          src="assets/images/mpesa-till-4343288.png"
+          alt="Official M-Pesa QR code for Buy Goods Till Number 4343288"
+          loading="lazy"
+        />
+
+        <p>Scan with M-Pesa to pay</p>
+      </div>
+    </div>
+
+    <div class="purchaseFormCard">
+      <p class="kicker">PAYMENT CONFIRMATION</p>
+
+      <h3>Send your receipt.</h3>
+
+      <p>
+        Complete this form after payment. Please use an email address you
+        can access—the private tracks will be delivered there.
+      </p>
+
+      <form
+        class="exclusivePurchaseForm"
+        action="https://formspree.io/f/mqpanjnb"
+        method="POST"
+      >
+        <input
+          type="hidden"
+          name="_subject"
+          value="New Cold Blooded Exclusive Purchase"
+        />
+
+        <div class="formField">
+          <label for="listenerName">Your name</label>
+
+          <input
+            type="text"
+            id="listenerName"
+            name="name"
+            autocomplete="name"
+            required
+          />
         </div>
 
-        <div class="shopGrid">
-          <!-- Soul by Owirri Music Store -->
-          <article class="shopCard musicStoreCard">
-            <div class="shopCardNumber">01</div>
+        <div class="formField">
+          <label for="listenerEmail">Delivery email</label>
 
-            <div class="shopCardContent">
-              <p class="kicker">SOUL BY OWIRRI</p>
-
-              <h3>Own the sound.</h3>
-
-              <p>
-                Shop Owirri’s three EPs and take the music beyond streaming.
-                Each project holds a different chapter of the story—from
-                identity and love to survival and self-return.
-              </p>
-
-              <a
-                class="button musicStoreButton"
-                href="https://soulbyowirri.hustlesasa.shop/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Shop the Music ↗
-              </a>
-            </div>
-
-            <span class="shopCardWord" aria-hidden="true">MUSIC</span>
-          </article>
-
-          <!-- Mi Hermosa -->
-          <article class="shopCard merchandiseCard">
-            <div class="shopCardNumber">02</div>
-
-            <div class="shopCardContent">
-              <p class="kicker">MI HERMOSA ART SANCTUARY</p>
-
-              <h3>Wear the art.</h3>
-
-              <p>
-                Explore handmade jewellery and wearable pieces shaped by
-                identity, colour, texture and personal expression.
-              </p>
-
-              <a
-                class="button primaryButton"
-                href="https://theyellowroom.hustlesasa.shop/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit the Shop ↗
-              </a>
-            </div>
-
-            <span class="shopCardWord" aria-hidden="true">SHOP</span>
-          </article>
-
-          <!-- Buy Me a Coffee -->
-          <article class="shopCard coffeeCard">
-            <div class="shopCardNumber">03</div>
-
-            <div class="coffeeContent">
-              <div class="coffeeCopy">
-                <p class="kicker">SUPPORT THE ART</p>
-
-                <h3>Buy me a coffee.</h3>
-
-                <p>
-                  Enjoying the music, stories or universe? You can support the
-                  next creation directly through M-Pesa.
-                </p>
-
-                <div class="tillDetails">
-                  <span>BUY GOODS TILL</span>
-                  <strong id="tillNumber">4343288</strong>
-                  <small>Confirm: Selline Atieno Owiti</small>
-                </div>
-
-                <button
-                  class="button copyTillButton"
-                  type="button"
-                  data-copy-till="4343288"
-                >
-                  Copy Till Number
-                </button>
-
-                <p
-                  class="copyTillStatus"
-                  id="copyTillStatus"
-                  aria-live="polite"
-                ></p>
-              </div>
-
-              <div class="coffeeQr">
-                <img
-                  src="assets/images/mpesa-till-4343288.png"
-                  alt="Official M-Pesa QR code for Buy Goods Till Number 4343288"
-                  loading="lazy"
-                />
-
-                <p>Scan with M-Pesa to support.</p>
-              </div>
-            </div>
-          </article>
+          <input
+            type="email"
+            id="listenerEmail"
+            name="email"
+            autocomplete="email"
+            required
+          />
         </div>
-      </section>
+
+        <div class="formField">
+          <label for="selectedPackage">Listening package</label>
+
+          <select id="selectedPackage" name="package" required>
+            <option value="">Choose your package</option>
+            <option value="Lead Single — KES 888">
+              Lead Single — KES 888
+            </option>
+            <option value="Half Album — KES 2,000">
+              Half Album — KES 2,000
+            </option>
+            <option value="Full Album — KES 5,000">
+              Full Album — KES 5,000
+            </option>
+          </select>
+        </div>
+
+        <div class="formField">
+          <label for="mpesaCode">M-Pesa confirmation code</label>
+
+          <input
+            type="text"
+            id="mpesaCode"
+            name="mpesa_confirmation_code"
+            placeholder="Example: UJQ7ABC123"
+            minlength="8"
+            maxlength="20"
+            required
+          />
+        </div>
+
+        <div class="formField">
+          <label for="listenerMessage">
+            A note for Owirri <span>(optional)</span>
+          </label>
+
+          <textarea
+            id="listenerMessage"
+            name="message"
+            rows="5"
+          ></textarea>
+        </div>
+
+        <label class="purchaseConsent">
+          <input
+            type="checkbox"
+            name="private_listening_agreement"
+            value="Agreed"
+            required
+          />
+
+          <span>
+            I understand that these unreleased tracks are provided for my
+            private listening only and may not be uploaded, forwarded,
+            resold or publicly shared.
+          </span>
+        </label>
+
+        <button class="button primaryButton submitPurchase" type="submit">
+          Submit Purchase
+        </button>
+
+        <p class="formPromise">
+          Delivery: within 24 hours after payment verification.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
 
       <!-- Contact -->
       <section

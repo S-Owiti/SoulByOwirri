@@ -2299,230 +2299,232 @@ footer div {
   }
 
   /* ==================================================
-   SHOP AND SUPPORT
+   COMPACT EXCLUSIVE LISTENING CARDS
    ================================================== */
 
-  .shop {
-    background:
-      radial-gradient(
-        circle at 15% 15%,
-        rgba(230, 184, 74, 0.12),
-        transparent 32%
-      ),
-      var(--surface);
-  }
-
-  .shopHeading {
-    max-width: 1400px;
-    margin: 0 auto 4rem;
-  }
-
-  .shopHeading h2 {
-    max-width: 1100px;
-    margin: 1rem 0 0;
-  }
-
-  .shopGrid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .exclusiveListenThread {
+    display: flex;
+    justify-content: center;
     gap: 1.25rem;
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 0 0 1.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
 
+  .exclusiveListenThread .exclusiveReleaseCard {
+    flex: 0 0 280px;
+    width: 280px;
+    max-width: 280px;
+    scroll-snap-align: start;
+  }
+
+  .exclusiveListenThread .releaseCardArt {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--ink);
+  }
+
+  .exclusiveListenThread .releaseCardArt img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1 / 1;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .exclusiveTileNumber {
+    position: absolute;
+    z-index: 2;
+    top: 0.8rem;
+    left: 0.8rem;
+    display: grid;
+    place-items: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    color: var(--ink);
+    background: var(--gold);
+    font-size: 0.62rem;
+    font-weight: 700;
+  }
+
+  .exclusiveCardDetails {
+    padding-top: 1rem;
+  }
+
+  .exclusiveCardDetails h4 {
+    margin: 0;
+    color: var(--foam);
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    line-height: 1.1;
+  }
+
+  .exclusiveCardDetails p {
+    margin: 0.55rem 0;
+    color: var(--mist);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .exclusiveCardDetails strong {
+    display: block;
+    margin: 0.8rem 0 1rem;
+    color: var(--gold);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .exclusiveBuyButton {
+    display: block;
+    width: 100%;
+    padding: 0.85rem 1rem;
+    color: var(--ink);
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    text-align: center;
+  }
+
+  .exclusiveBuyButton:hover,
+  .exclusiveBuyButton:focus-visible {
+    color: var(--foam);
+    background: #905a01;
+    border-color: #905a01;
+  }
+
+  /* Tablet and mobile */
+
+  @media (max-width: 900px) {
+    .exclusiveListenThread {
+      justify-content: flex-start;
+      max-width: none;
+    }
+
+    .exclusiveListenThread .exclusiveReleaseCard {
+      flex-basis: 250px;
+      width: 250px;
+      max-width: 250px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .exclusiveListenThread {
+      margin-inline: -6vw;
+      width: calc(100% + 12vw);
+      padding-inline: 6vw;
+    }
+
+    .exclusiveListenThread .exclusiveReleaseCard {
+      flex-basis: 72vw;
+      width: 72vw;
+      max-width: 280px;
+    }
+  }
+
+  /* Purchase area */
+
+  .purchaseArea {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: clamp(2rem, 5vw, 5rem);
     max-width: 1400px;
     margin: 0 auto;
+    padding-top: 5rem;
+    border-top: 1px solid rgba(243, 234, 215, 0.18);
+    scroll-margin-top: 3rem;
   }
 
-  .shopCard {
-    position: relative;
-
-    min-width: 0;
-    padding: clamp(2rem, 5vw, 4.5rem);
-
-    overflow: hidden;
-    border: 1px solid var(--border);
+  .purchaseInstructions,
+  .purchaseFormCard {
+    padding: clamp(2rem, 4vw, 4rem);
+    border: 1px solid rgba(243, 234, 215, 0.18);
   }
 
-  .shopCardNumber {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-
-    color: rgba(243, 238, 230, 0.18);
-
-    font-family: var(--font-display);
-    font-size: 2.5rem;
+  .purchaseInstructions {
+    background:
+      linear-gradient(rgba(16, 23, 16, 0.9), rgba(16, 23, 16, 0.94)),
+      url("assets/images/forest-portal.jpg") center / cover;
   }
 
-  .shopCard h3 {
+  .purchaseFormCard {
+    background: rgba(16, 23, 16, 0.96);
+  }
+
+  .purchaseInstructions h3,
+  .purchaseFormCard h3 {
     margin: 1rem 0 1.5rem;
-
+    color: var(--foam);
     font-family: var(--font-display);
-    font-size: clamp(2.8rem, 5vw, 5rem);
+    font-size: clamp(2.7rem, 5vw, 5rem);
     font-weight: 400;
     line-height: 0.95;
   }
 
-  .shopCard p {
-    max-width: 560px;
-
+  .purchaseFormCard > p {
+    max-width: 600px;
     color: var(--mist);
-    font-size: 1rem;
-    line-height: 1.8;
+    line-height: 1.75;
   }
 
-  /* Soul by Owirri music store */
-
-  .musicStoreCard {
-    display: flex;
-    align-items: flex-end;
-
-    min-height: 650px;
-
-    color: var(--ink);
-
-    background:
-      radial-gradient(
-        circle at 80% 15%,
-        rgba(196, 33, 24, 0.2),
-        transparent 35%
-      ),
-      var(--gold);
+  .purchaseSteps {
+    margin: 2rem 0;
+    padding-left: 1.3rem;
+    color: rgba(243, 234, 215, 0.8);
   }
 
-  .musicStoreCard .kicker {
-    color: var(--red-dark);
+  .purchaseSteps li {
+    margin-bottom: 1rem;
+    padding-left: 0.5rem;
+    line-height: 1.65;
   }
 
-  .musicStoreCard h3 {
-    color: var(--ink);
-  }
-
-  .musicStoreCard p {
-    color: rgba(23, 23, 22, 0.78);
-  }
-
-  .musicStoreCard .shopCardNumber {
-    color: rgba(23, 23, 22, 0.2);
-  }
-
-  .musicStoreCard .shopCardWord {
-    color: rgba(23, 23, 22, 0.06);
-  }
-
-  .musicStoreButton {
-    color: var(--foam);
-    background: var(--ink);
-    border: 1px solid var(--ink);
-  }
-
-  .musicStoreButton:hover,
-  .musicStoreButton:focus-visible {
-    color: var(--foam);
-    background: var(--red);
-    border-color: var(--red);
-  }
-
-  /* Let the support card span the full row */
-
-  .coffeeCard {
-    grid-column: 1 / -1;
-  }
-
-  /* Mi Hermosa card */
-
-  .merchandiseCard {
-    display: flex;
-    align-items: flex-end;
-
-    min-height: 650px;
-
-    background: linear-gradient(
-      160deg,
-      rgba(196, 33, 24, 0.94),
-      rgba(113, 18, 14, 0.97)
-    );
-  }
-
-  .merchandiseCard .kicker {
+  .purchaseSteps li::marker {
     color: var(--gold);
+    font-weight: 700;
   }
 
-  .merchandiseCard p {
-    color: rgba(243, 238, 230, 0.82);
-  }
+  /* Till and QR */
 
-  .shopCardContent {
-    position: relative;
-    z-index: 2;
-  }
-
-  .shopCardWord {
-    position: absolute;
-    top: 1rem;
-    left: -0.7rem;
-
-    color: rgba(255, 255, 255, 0.06);
-
-    font-family: var(--font-display);
-    font-size: clamp(6rem, 12vw, 12rem);
-    line-height: 1;
-    writing-mode: vertical-rl;
-  }
-
-  /* Coffee and QR card */
-
-  .coffeeCard {
-    display: flex;
-    align-items: center;
-
-    background: var(--ink);
-  }
-
-  .coffeeContent {
-    display: grid;
-    grid-template-columns: 1fr minmax(230px, 0.8fr);
-    gap: clamp(2rem, 5vw, 5rem);
-    align-items: center;
-
-    width: 100%;
-  }
-
-  .tillDetails {
+  .purchaseTillDetails {
     margin: 2rem 0 1.2rem;
     padding: 1.5rem;
-
-    background: var(--surface);
+    background: rgba(16, 23, 16, 0.88);
     border-left: 4px solid var(--gold);
   }
 
-  .tillDetails span,
-  .tillDetails small {
+  .purchaseTillDetails span,
+  .purchaseTillDetails small {
     display: block;
   }
 
-  .tillDetails span {
+  .purchaseTillDetails span {
     color: var(--mist);
-
     font-size: 0.62rem;
     font-weight: 700;
     letter-spacing: 0.18em;
   }
 
-  .tillDetails strong {
+  .purchaseTillDetails strong {
     display: block;
     margin: 0.5rem 0;
-
     color: var(--foam);
-
     font-family: var(--font-display);
-    font-size: clamp(2.2rem, 5vw, 4.5rem);
+    font-size: clamp(2.3rem, 5vw, 4.5rem);
     font-weight: 400;
     letter-spacing: 0.05em;
   }
 
-  .tillDetails small {
+  .purchaseTillDetails small {
     color: var(--gold);
-
-    font-size: 0.72rem;
+    font-size: 0.75rem;
     font-weight: 700;
   }
 
@@ -2533,38 +2535,28 @@ footer div {
     cursor: pointer;
   }
 
-  .copyTillButton:hover,
-  .copyTillButton:focus-visible {
-    color: var(--foam);
-    background: var(--red);
-    border-color: var(--red);
-  }
-
   .copyTillStatus {
     min-height: 1.4rem;
-    margin: 0.7rem 0 0 !important;
-
-    color: var(--gold) !important;
-
-    font-size: 0.72rem !important;
+    margin: 0.7rem 0 0;
+    color: var(--gold);
+    font-size: 0.72rem;
     font-weight: 700;
   }
 
-  .coffeeQr {
+  .purchaseQr {
+    max-width: 360px;
+    margin-top: 2rem;
     padding: 0.8rem;
-
     background: #ffffff;
-    border: 1px solid var(--border);
   }
 
-  .coffeeQr img {
+  .purchaseQr img {
     width: 100%;
     height: auto;
   }
 
-  .coffeeQr p {
+  .purchaseQr p {
     margin: 0.8rem 0 0;
-
     color: var(--ink);
     font-size: 0.68rem;
     font-weight: 700;
@@ -2572,30 +2564,125 @@ footer div {
     text-transform: uppercase;
   }
 
-  /* Shop responsive */
+  /* Purchase form */
 
-  @media (max-width: 900px) {
-    .shopGrid {
+  .exclusivePurchaseForm {
+    display: grid;
+    gap: 1.3rem;
+    margin-top: 2.5rem;
+  }
+
+  .formField {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .formField label {
+    color: var(--foam);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .formField label span {
+    color: var(--mist);
+    text-transform: none;
+  }
+
+  .formField input,
+  .formField select,
+  .formField textarea {
+    width: 100%;
+    padding: 1rem;
+    color: var(--foam);
+    background: rgba(243, 234, 215, 0.06);
+    border: 1px solid rgba(243, 234, 215, 0.24);
+    border-radius: 0;
+    font: inherit;
+  }
+
+  .formField select {
+    color-scheme: dark;
+  }
+
+  .formField textarea {
+    resize: vertical;
+  }
+
+  .formField input:focus,
+  .formField select:focus,
+  .formField textarea:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-color: var(--gold);
+  }
+
+  .purchaseConsent {
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+    color: var(--mist);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    cursor: pointer;
+  }
+
+  .purchaseConsent input {
+    flex: 0 0 auto;
+    margin-top: 0.3rem;
+    accent-color: var(--gold);
+  }
+
+  .submitPurchase {
+    width: 100%;
+    margin-top: 0.5rem;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .formPromise {
+    margin: 0;
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  /* Responsive */
+
+  @media (max-width: 1000px) {
+    .exclusivePackageGrid {
       grid-template-columns: 1fr;
     }
 
-    .merchandiseCard,
-    .musicStoreCard {
-      min-height: 480px;
+    .exclusivePackageCard {
+      min-height: 470px;
     }
 
-    .coffeeCard {
-      grid-column: auto;
+    .purchaseArea {
+      grid-template-columns: 1fr;
     }
   }
 
-  @media (max-width: 650px) {
-    .coffeeContent {
-      grid-template-columns: 1fr;
+  @media (max-width: 700px) {
+    .otherProducts {
+      align-items: flex-start;
+      flex-direction: column;
     }
 
-    .coffeeQr {
-      max-width: 420px;
+    .otherProducts .button {
+      width: 100%;
+      text-align: center;
+    }
+
+    .purchaseInstructions,
+    .purchaseFormCard {
+      padding: 1.5rem;
+    }
+
+    .purchaseQr {
+      max-width: 100%;
     }
 
     .copyTillButton {
@@ -2714,40 +2801,6 @@ footer div {
   }
 }
 
-/* Final hero framing override */
-
-.featuredHero {
-  display: grid;
-  place-items: center;
-  background:
-    linear-gradient(rgba(8, 20, 12, 0.5), rgba(8, 20, 12, 0.68)),
-    url("assets/images/cold.jpg") center / cover no-repeat;
-}
-
-.featuredHeroImage {
-  position: relative;
-  z-index: 1;
-  width: auto !important;
-  max-width: 100% !important;
-  height: 100% !important;
-  object-fit: contain !important;
-  object-position: center !important;
-  transform: none !important;
-}
-
-@media (max-width: 800px) {
-  .featuredHero {
-    height: 82svh;
-    min-height: 560px;
-  }
-
-  .featuredHeroImage {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-  }
-}
-
 /* ==================================================
    REUSABLE COLD BLOODED ATMOSPHERES
    ================================================== */
@@ -2819,4 +2872,123 @@ footer div {
 .portalAtmosphere > * {
   position: relative;
   z-index: 1;
+}
+
+/* ==================================================
+   COLD BLOODED FOREST-PORTAL HERO
+   ================================================== */
+
+/* Featured hero — clean editorial crop */
+#top.featuredHero {
+  position: relative;
+  width: 100%;
+  height: min(920px, 100svh);
+  min-height: 680px;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+#top.featuredHero::before,
+#top.featuredHero::after {
+  display: none;
+}
+
+#top.featuredHero .featuredHeroImage {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: center 10% !important;
+  transform: none !important;
+  box-shadow: none;
+}
+
+@media (max-width: 800px) {
+  #top.featuredHero {
+    height: 82svh;
+    min-height: 560px;
+    padding-top: 0;
+  }
+
+  #top.featuredHero .featuredHeroImage {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 52% 18% !important;
+  }
+}
+
+/* Exclusive Buy Now button */
+
+.exclusiveBuyButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  width: 100%;
+  padding: 1rem 1.2rem;
+
+  color: var(--ink);
+  background: linear-gradient(135deg, var(--gold), #d99201);
+
+  border: 1px solid var(--gold);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-align: left;
+  text-transform: uppercase;
+
+  transition:
+    color 220ms ease,
+    background 220ms ease,
+    border-color 220ms ease,
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.exclusiveBuyButton::after {
+  content: "↗";
+  font-size: 1rem;
+  transition: transform 220ms ease;
+}
+
+.exclusiveBuyButton:hover,
+.exclusiveBuyButton:focus-visible {
+  color: var(--foam);
+  background: #905a01;
+  border-color: #d99201;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(217, 146, 1, 0.22);
+}
+
+.exclusiveBuyButton:hover::after,
+.exclusiveBuyButton:focus-visible::after {
+  transform: translate(3px, -3px);
+}
+
+.exclusiveListenNote {
+  width: min(100%, 850px);
+  margin: 2.5rem auto 0;
+  padding: 0 1rem;
+
+  color: rgba(243, 234, 215, 0.82);
+
+  font-size: clamp(1rem, 1.5vw, 1.12rem);
+  line-height: 1.85;
+  text-align: center !important;
+}
+
+@media (max-width: 650px) {
+  .exclusiveListenNote {
+    padding: 0;
+    text-align: center !important;
+  }
 }
