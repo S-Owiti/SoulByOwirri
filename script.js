@@ -151,26 +151,29 @@ document.querySelector("#year").textContent = new Date().getFullYear();
 })();
 
 /* ==================================================
-   COLD BLOODED PACKAGE SELECTION
+   OPEN PURCHASE FORM + SELECT PACKAGE
    ================================================== */
 
 (() => {
   const packageButtons = document.querySelectorAll("[data-package]");
   const packageSelect = document.getElementById("selectedPackage");
-  const purchaseForm = document.getElementById("purchaseForm");
+  const purchaseDisclosure = document.getElementById("purchaseForm");
 
-  if (!packageButtons.length || !packageSelect || !purchaseForm) {
+  if (!packageButtons.length || !packageSelect || !purchaseDisclosure) {
     return;
   }
 
   packageButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+
       const selectedPackage = button.dataset.package;
 
       packageSelect.value = selectedPackage;
+      purchaseDisclosure.open = true;
 
       window.setTimeout(() => {
-        purchaseForm.scrollIntoView({
+        purchaseDisclosure.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
@@ -178,7 +181,7 @@ document.querySelector("#year").textContent = new Date().getFullYear();
         packageSelect.focus({
           preventScroll: true,
         });
-      }, 100);
+      }, 150);
     });
   });
 })();

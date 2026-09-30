@@ -44,10 +44,10 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="styles.css?v=16" />
     <link rel="stylesheet" href="interactions.css?v=8" />
 
-    <script src="script.js?v=8" defer></script>
+    <link rel="stylesheet" href="styles.css?v=18" />
+    <script src="script.js?v=11" defer></script>
   </head>
 
   <body>
@@ -953,72 +953,43 @@
   </a>
 </div>
 
-  <!-- Purchase form -->
-  <div class="purchaseArea" id="purchaseForm">
-    <div class="purchaseInstructions">
-      <p class="kicker">HOW TO ENTER</p>
+  <!-- Hidden purchase form -->
+<!-- Hidden purchase form -->
+<details class="purchaseDisclosure" id="purchaseForm">
+
+  <summary class="purchaseSummary">
+    <span>
+      <small>READY TO ENTER?</small>
+      Complete Your Purchase
+    </span>
+
+    <span class="purchaseSummaryIcon" aria-hidden="true">+</span>
+  </summary>
+
+  <div class="purchaseArea">
+    <div class="simplePurchaseCard">
+
+      <p class="kicker">PAYMENT CONFIRMATION</p>
 
       <h3>Purchase your private listen.</h3>
 
-      <ol class="purchaseSteps">
-        <li>
-          Choose your Cold Blooded listening package.
-        </li>
-
-        <li>
-          Pay the corresponding amount through M-Pesa Buy Goods.
-        </li>
-
-        <li>
-          Submit your details and M-Pesa confirmation code using the form.
-        </li>
-
-        <li>
-          Your private listening files will be delivered by email within
-          24 hours after payment verification.
-        </li>
-      </ol>
-
-      <div class="purchaseTillDetails">
-        <span>M-PESA BUY GOODS TILL</span>
-        <strong>4343288</strong>
-        <small>Confirm: Selline Atieno Owiti</small>
-      </div>
-
-      <button
-        class="button copyTillButton"
-        type="button"
-        data-copy-till="4343288"
-      >
-        Copy Till Number
-      </button>
-
-      <p
-        class="copyTillStatus"
-        id="copyTillStatus"
-        aria-live="polite"
-      ></p>
-
-      <div class="purchaseQr">
-        <img
-          src="assets/images/mpesa-till-4343288.png"
-          alt="Official M-Pesa QR code for Buy Goods Till Number 4343288"
-          loading="lazy"
-        />
-
-        <p>Scan with M-Pesa to pay</p>
-      </div>
-    </div>
-
-    <div class="purchaseFormCard">
-      <p class="kicker">PAYMENT CONFIRMATION</p>
-
-      <h3>Send your receipt.</h3>
-
-      <p>
+      <p class="purchaseFormIntro">
         Complete this form after payment. Please use an email address you
-        can access—the private tracks will be delivered there.
+        can access, the private tracks will be delivered there.
       </p>
+
+      <!-- Compact payment details -->
+      <div class="simpleTillDetails">
+        <div>
+          <span>M-PESA BUY GOODS TILL</span>
+          <strong>4343288</strong>
+        </div>
+
+        <p>
+          Confirm payment to:
+          <b>Selline Atieno Owiti</b>
+        </p>
+      </div>
 
       <form
         class="exclusivePurchaseForm"
@@ -1060,12 +1031,15 @@
 
           <select id="selectedPackage" name="package" required>
             <option value="">Choose your package</option>
+
             <option value="Lead Single — KES 888">
               Lead Single — KES 888
             </option>
-            <option value="Half Album — KES 2,000">
-              Half Album — KES 2,000
+
+            <option value="Half Album — KES 3,000">
+              Half Album — KES 3,000
             </option>
+
             <option value="Full Album — KES 5,000">
               Full Album — KES 5,000
             </option>
@@ -1094,7 +1068,7 @@
           <textarea
             id="listenerMessage"
             name="message"
-            rows="5"
+            rows="4"
           ></textarea>
         </div>
 
@@ -1113,7 +1087,10 @@
           </span>
         </label>
 
-        <button class="button primaryButton submitPurchase" type="submit">
+        <button
+          class="button primaryButton submitPurchase"
+          type="submit"
+        >
           Submit Purchase
         </button>
 
@@ -1123,6 +1100,7 @@
       </form>
     </div>
   </div>
+</details>
 </section>
 
       <!-- Contact -->

@@ -2992,3 +2992,322 @@ footer div {
     text-align: center !important;
   }
 }
+
+/* ==================================================
+   HIDDEN PURCHASE FORM
+   ================================================== */
+
+.purchaseDisclosure {
+  width: 100%;
+  max-width: 1400px;
+  margin: 4rem auto 0;
+  border-top: 1px solid rgba(243, 234, 215, 0.2);
+  border-bottom: 1px solid rgba(243, 234, 215, 0.2);
+  scroll-margin-top: 3rem;
+}
+
+.purchaseDisclosure .purchaseSummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  padding: 1.6rem 0;
+
+  color: var(--foam);
+  cursor: pointer;
+  list-style: none;
+}
+
+.purchaseDisclosure .purchaseSummary::-webkit-details-marker {
+  display: none;
+}
+
+.purchaseSummary span:first-child {
+  display: grid;
+  gap: 0.35rem;
+
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.3rem);
+  line-height: 1;
+}
+
+.purchaseSummary small {
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.purchaseSummaryIcon {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+
+  width: 2.8rem;
+  height: 2.8rem;
+
+  color: var(--ink);
+  background: var(--gold);
+  border-radius: 50%;
+
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  transition:
+    transform 250ms ease,
+    background 250ms ease;
+}
+
+.purchaseSummary:hover .purchaseSummaryIcon {
+  background: #d99201;
+  transform: rotate(90deg);
+}
+
+.purchaseDisclosure[open] .purchaseSummaryIcon {
+  color: var(--foam);
+  background: #905a01;
+  transform: rotate(45deg);
+}
+
+.purchaseDisclosure .purchaseArea {
+  padding: 3rem 0 4rem;
+  border-top: 1px solid rgba(243, 234, 215, 0.14);
+  animation: revealPurchaseForm 350ms ease both;
+}
+
+@keyframes revealPurchaseForm {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 650px) {
+  .purchaseDisclosure {
+    margin-top: 3rem;
+  }
+
+  .purchaseDisclosure .purchaseSummary {
+    padding: 1.3rem 0;
+  }
+
+  .purchaseDisclosure .purchaseArea {
+    padding-top: 2rem;
+  }
+}
+
+/* ==================================================
+   SIMPLE PURCHASE FORM
+   ================================================== */
+
+.purchaseDisclosure .purchaseArea {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 0 4rem;
+}
+
+.simplePurchaseCard {
+  width: 100%;
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  background: rgba(9, 24, 13, 0.96);
+  border: 1px solid rgba(243, 234, 215, 0.2);
+}
+
+.simplePurchaseCard h3 {
+  margin: 0.8rem 0 1rem;
+  color: var(--foam);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.purchaseFormIntro {
+  max-width: 620px;
+  margin: 0;
+  color: var(--mist);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Compact Till strip */
+
+.simpleTillDetails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  margin: 2rem 0;
+  padding: 1.25rem 1.4rem;
+
+  background: rgba(217, 146, 1, 0.1);
+  border: 1px solid rgba(217, 146, 1, 0.5);
+  border-left: 4px solid var(--gold);
+}
+
+.simpleTillDetails span {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--mist);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.simpleTillDetails strong {
+  display: block;
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.simpleTillDetails p {
+  max-width: 210px;
+  margin: 0;
+  color: var(--mist);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.simpleTillDetails b {
+  display: block;
+  color: var(--foam);
+}
+
+/* Form layout */
+
+.simplePurchaseCard .exclusivePurchaseForm {
+  display: grid;
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 0;
+}
+
+.simplePurchaseCard .formField {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.simplePurchaseCard .formField label {
+  color: var(--foam);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.simplePurchaseCard .formField label span {
+  color: var(--mist);
+  font-weight: 400;
+  text-transform: none;
+}
+
+.simplePurchaseCard .formField input,
+.simplePurchaseCard .formField select,
+.simplePurchaseCard .formField textarea {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  padding: 0.9rem 1rem;
+
+  color: var(--foam);
+  background: rgba(243, 234, 215, 0.07);
+
+  border: 1px solid rgba(243, 234, 215, 0.28);
+  border-radius: 0;
+
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.simplePurchaseCard .formField textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.simplePurchaseCard .formField select {
+  color-scheme: dark;
+  cursor: pointer;
+}
+
+.simplePurchaseCard .formField input:focus,
+.simplePurchaseCard .formField select:focus,
+.simplePurchaseCard .formField textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-color: var(--gold);
+}
+
+.simplePurchaseCard .purchaseConsent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  margin-top: 0.25rem;
+  color: var(--mist);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  cursor: pointer;
+}
+
+.simplePurchaseCard .purchaseConsent input {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  margin-top: 0.2rem;
+  accent-color: var(--gold);
+}
+
+.simplePurchaseCard .submitPurchase {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 0.5rem;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+.simplePurchaseCard .formPromise {
+  margin: 0;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .purchaseDisclosure .purchaseArea {
+    padding: 2rem 0 3rem;
+  }
+
+  .simplePurchaseCard {
+    padding: 1.4rem;
+  }
+
+  .simpleTillDetails {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .simpleTillDetails p {
+    max-width: none;
+    text-align: left;
+  }
+}
