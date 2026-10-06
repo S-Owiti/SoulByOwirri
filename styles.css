@@ -3542,3 +3542,275 @@ footer div {
     padding: 1.5rem;
   }
 }
+
+/* ==================================================
+   PLANET HER — SOCIAL UNIVERSE
+   ================================================== */
+
+.nextChapter.socialChapter {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  color: var(--cream, #f3ead7);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(16, 23, 16, 0.92),
+      rgba(26, 63, 34, 0.83)
+    ),
+    url("assets/images/forest-portal.jpg") center / cover no-repeat;
+
+  border: 1px solid rgba(217, 146, 1, 0.28);
+}
+
+/* Quiet water atmosphere */
+.nextChapter.socialChapter::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  opacity: 0.16;
+
+  background:
+    url("assets/images/water-ripples.jpg")
+    center / cover no-repeat;
+
+  mix-blend-mode: screen;
+}
+
+/* Warm portal glow */
+.nextChapter.socialChapter::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 34rem;
+  height: 34rem;
+  right: -13rem;
+  bottom: -18rem;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(217, 146, 1, 0.28),
+    transparent 68%
+  );
+
+  filter: blur(12px);
+  pointer-events: none;
+}
+
+.socialChapter .nextChapterLabel {
+  position: relative;
+  z-index: 2;
+}
+
+.socialChapter .nextChapterLabel .kicker {
+  color: var(--honey, #d99201);
+}
+
+.socialChapter .nextChapterLabel span {
+  color: rgba(243, 234, 215, 0.65);
+}
+
+.socialChapterContent {
+  position: relative;
+  z-index: 2;
+}
+
+.socialChapterContent h3 {
+  color: var(--cream, #f3ead7);
+}
+
+.socialEyebrow {
+  margin: 0 0 0.8rem;
+
+  color: var(--honey, #d99201) !important;
+
+  font-size: 0.65rem !important;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.socialChapterIntro {
+  max-width: 650px;
+  margin-bottom: 2rem;
+
+  color: rgba(243, 234, 215, 0.78) !important;
+}
+
+/* WhatsApp headline card */
+
+.planetHerHeadline {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  align-items: center;
+
+  max-width: 720px;
+  margin: 2rem 0 1rem;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+
+  color: #101710;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(243, 234, 215, 0.96),
+      rgba(217, 146, 1, 0.94)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.planetHerHeadline:hover,
+.planetHerHeadline:focus-visible {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(217, 146, 1, 0.3);
+}
+
+.planetHerHeadlineIcon {
+  display: grid;
+  width: 3.3rem;
+  height: 3.3rem;
+  place-items: center;
+
+  color: var(--cream, #f3ead7);
+  background: var(--forest, #1a3f22);
+  border-radius: 50%;
+
+  font-size: 1.35rem;
+}
+
+.planetHerHeadline small,
+.planetHerHeadline strong,
+.planetHerHeadline em {
+  display: block;
+}
+
+.planetHerHeadline small {
+  margin-bottom: 0.35rem;
+
+  color: rgba(16, 23, 16, 0.65);
+
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+.planetHerHeadline strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.5vw, 1.75rem);
+  line-height: 1.1;
+}
+
+.planetHerHeadline em {
+  margin-top: 0.55rem;
+
+  color: var(--forest, #1a3f22);
+
+  font-size: 0.7rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Supporting social links */
+
+.socialUniverse {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  max-width: 720px;
+
+  border-top: 1px solid rgba(243, 234, 215, 0.2);
+  border-left: 1px solid rgba(243, 234, 215, 0.2);
+}
+
+.socialUniverse a {
+  position: relative;
+
+  min-width: 0;
+  padding: 1.2rem;
+
+  border-right: 1px solid rgba(243, 234, 215, 0.2);
+  border-bottom: 1px solid rgba(243, 234, 215, 0.2);
+
+  transition:
+    background 200ms ease,
+    color 200ms ease;
+}
+
+.socialUniverse a:hover,
+.socialUniverse a:focus-visible {
+  color: #101710;
+  background: var(--honey, #d99201);
+}
+
+.socialUniverse span,
+.socialUniverse strong {
+  display: block;
+}
+
+.socialUniverse span {
+  margin-bottom: 0.4rem;
+
+  color: var(--honey, #d99201);
+
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.socialUniverse a:hover span,
+.socialUniverse a:focus-visible span {
+  color: var(--forest, #1a3f22);
+}
+
+.socialUniverse strong {
+  padding-right: 1.4rem;
+
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.socialUniverse i {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+
+  font-style: normal;
+}
+
+.socialChapter .nextChapterStatus {
+  color: rgba(243, 234, 215, 0.38);
+}
+
+/* Planet Her responsive */
+
+@media (max-width: 650px) {
+  .planetHerHeadline {
+    grid-template-columns: 1fr;
+  }
+
+  .planetHerHeadlineIcon {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .socialUniverse {
+    grid-template-columns: 1fr;
+  }
+}
