@@ -3555,11 +3555,7 @@ footer div {
   color: var(--cream, #f3ead7);
 
   background:
-    linear-gradient(
-      135deg,
-      rgba(16, 23, 16, 0.92),
-      rgba(26, 63, 34, 0.83)
-    ),
+    linear-gradient(135deg, rgba(16, 23, 16, 0.92), rgba(26, 63, 34, 0.83)),
     url("assets/images/forest-portal.jpg") center / cover no-repeat;
 
   border: 1px solid rgba(217, 146, 1, 0.28);
@@ -3574,9 +3570,7 @@ footer div {
 
   opacity: 0.16;
 
-  background:
-    url("assets/images/water-ripples.jpg")
-    center / cover no-repeat;
+  background: url("assets/images/water-ripples.jpg") center / cover no-repeat;
 
   mix-blend-mode: screen;
 }
@@ -3593,11 +3587,7 @@ footer div {
 
   border-radius: 50%;
 
-  background: radial-gradient(
-    circle,
-    rgba(217, 146, 1, 0.28),
-    transparent 68%
-  );
+  background: radial-gradient(circle, rgba(217, 146, 1, 0.28), transparent 68%);
 
   filter: blur(12px);
   pointer-events: none;
@@ -3657,12 +3647,11 @@ footer div {
 
   color: #101710;
 
-  background:
-    linear-gradient(
-      120deg,
-      rgba(243, 234, 215, 0.96),
-      rgba(217, 146, 1, 0.94)
-    );
+  background: linear-gradient(
+    120deg,
+    rgba(243, 234, 215, 0.96),
+    rgba(217, 146, 1, 0.94)
+  );
 
   border: 1px solid rgba(255, 255, 255, 0.35);
   transition:
@@ -3812,5 +3801,248 @@ footer div {
 
   .socialUniverse {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==================================================
+   COLD BLOODED — EXCLUSIVE LISTENING
+   ================================================== */
+
+.exclusiveCampaign {
+  max-width: 1400px;
+  margin: clamp(4rem, 8vw, 8rem) auto 0;
+}
+
+.exclusiveCampaignBanner {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  max-width: 850px;
+  margin: 0 auto 2.5rem;
+  padding: clamp(1.8rem, 4vw, 3.2rem);
+
+  text-align: center;
+
+  background:
+    linear-gradient(135deg, rgba(16, 23, 16, 0.9), rgba(26, 63, 34, 0.8)),
+    url("assets/images/water-ripples.jpg") center / cover no-repeat;
+
+  border: 1px solid rgba(217, 146, 1, 0.42);
+  box-shadow: 0 20px 65px rgba(0, 0, 0, 0.25);
+}
+
+.exclusiveCampaignBanner::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at 50% 120%,
+    rgba(217, 146, 1, 0.28),
+    transparent 52%
+  );
+}
+
+.exclusiveCampaignBanner .kicker {
+  margin: 0 0 0.8rem;
+  color: var(--gold);
+}
+
+.exclusiveCampaignBanner h3 {
+  margin: 0;
+
+  color: var(--foam);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+}
+
+.exclusiveCampaignBanner > p:last-child {
+  max-width: 680px;
+  margin: 1.2rem auto 0;
+
+  color: rgba(243, 238, 230, 0.78);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* Package grid */
+
+.exclusivePackageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.exclusivePackageCard {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+
+  background: rgba(16, 23, 16, 0.84);
+  border: 1px solid rgba(217, 146, 1, 0.25);
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.exclusivePackageCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(217, 146, 1, 0.68);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.3);
+}
+
+.exclusivePackageCard.featuredPackage {
+  border-color: rgba(217, 146, 1, 0.72);
+}
+
+.exclusivePackageArt {
+  position: relative;
+  overflow: hidden;
+}
+
+.exclusivePackageArt img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  transition: transform 450ms ease;
+}
+
+.exclusivePackageCard:hover .exclusivePackageArt img {
+  transform: scale(1.035);
+}
+
+.exclusivePackageNumber {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+
+  color: var(--foam);
+  background: rgba(16, 23, 16, 0.85);
+  border: 1px solid rgba(243, 238, 230, 0.25);
+
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.exclusivePackageBadge {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+
+  padding: 0.65rem 0.8rem;
+
+  color: var(--ink);
+  background: var(--gold);
+
+  font-size: 0.56rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.exclusivePackageDetails {
+  padding: clamp(1.4rem, 3vw, 2rem);
+}
+
+.exclusivePackageDetails .kicker {
+  color: var(--gold);
+}
+
+.exclusivePackageDetails h4 {
+  margin: 0.7rem 0 1rem;
+
+  color: var(--foam);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.exclusivePackageDetails > p:not(.kicker) {
+  min-height: 5.4rem;
+  margin: 0;
+
+  color: var(--mist);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.exclusivePackageFooter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 1.8rem;
+  padding-top: 1.3rem;
+
+  border-top: 1px solid rgba(243, 238, 230, 0.14);
+}
+
+.exclusivePackageFooter strong {
+  color: var(--gold);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.exclusiveBuyButton {
+  color: var(--ink);
+  background: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+.exclusiveBuyButton:hover,
+.exclusiveBuyButton:focus-visible {
+  color: var(--foam);
+  background: var(--forest, #1a3f22);
+  border-color: var(--gold);
+}
+
+.exclusiveDeliveryNote {
+  margin: 1.5rem auto 0;
+
+  color: var(--mist);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .exclusivePackageGrid {
+    grid-template-columns: 1fr;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  .exclusivePackageDetails > p:not(.kicker) {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .exclusivePackageFooter {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .exclusiveBuyButton {
+    width: 100%;
+    text-align: center;
   }
 }
