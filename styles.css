@@ -1494,37 +1494,49 @@ button {
 }
 
 /* ==================================================
-   THE OWIRRI ARCHIVES
+   THE OWIRRI ARCHIVES - EDITORIAL SYSTEM
    ================================================== */
 
 .archiveNav {
   position: absolute;
 }
 
+.archiveCover,
+.archiveClosing,
+.archiveEntries {
+  position: relative;
+  isolation: isolate;
+}
+
 .archiveCover {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-
   min-height: 88svh;
   padding: 10rem 7vw 6rem;
-
+  overflow: hidden;
   background:
-    radial-gradient(
-      circle at 82% 18%,
-      rgba(196, 33, 24, 0.58),
-      transparent 34%
-    ),
-    linear-gradient(135deg, #171716 0%, #211a18 52%, #302522 100%);
+    linear-gradient(180deg, rgba(7, 24, 15, 0.62), rgba(7, 24, 15, 0.92)),
+    url("assets/images/forest-portal.jpg") center 45% / cover no-repeat;
+  border-bottom: 1px solid rgba(217, 146, 1, 0.34);
+}
 
-  border-bottom: 1px solid var(--border);
+.archiveCover::before,
+.archiveClosing::before,
+.archiveEntries::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: url("assets/images/water-ripples.jpg") center / cover no-repeat;
+  opacity: 0.12;
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
 .archiveIssue {
   margin: 0 0 2rem;
-
-  color: var(--gold);
-
+  color: #d99201;
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.24em;
@@ -1532,7 +1544,6 @@ button {
 
 .archiveCover h1 {
   margin: 0;
-
   font-family: var(--font-display);
   font-size: clamp(4.6rem, 11vw, 11rem);
   font-weight: 400;
@@ -1541,7 +1552,7 @@ button {
 }
 
 .archiveCover h1 span {
-  color: var(--red);
+  color: #d99201;
 }
 
 .archiveCoverFooter {
@@ -1549,164 +1560,261 @@ button {
   align-items: flex-end;
   justify-content: space-between;
   gap: 3rem;
-
   margin-top: 4rem;
 }
 
 .archiveCoverFooter p {
   max-width: 560px;
   margin: 0;
-
-  color: var(--mist);
+  color: #c8d0bd;
   font-size: 1.05rem;
   line-height: 1.8;
 }
 
-/* Contents */
+/* Contents / visual tiles */
 
 .archiveContents {
-  background: var(--foam);
-  color: var(--ink);
+  color: var(--foam);
+  background: #101710;
 }
 
 .archiveContents .sectionNum {
-  color: #665f59;
-  border-color: rgba(23, 23, 22, 0.22);
+  color: #aab89b;
+  border-color: rgba(217, 146, 1, 0.32);
 }
 
-.archiveContentsGrid {
-  display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: clamp(3rem, 8vw, 8rem);
+.archiveContentsIntro {
+  max-width: 1400px;
+  margin: 0 auto 3.5rem;
 }
 
 .archiveContents h2 {
   margin: 0.6rem 0 0;
-
   font-size: clamp(3.5rem, 7vw, 7rem);
 }
 
 .archiveIndex {
-  margin: 0;
-  padding: 0;
-
-  list-style: none;
-  border-top: 1px solid rgba(23, 23, 22, 0.25);
-}
-
-.archiveIndex li {
-  border-bottom: 1px solid rgba(23, 23, 22, 0.25);
-}
-
-.archiveIndex a {
   display: grid;
-  grid-template-columns: 50px 1fr auto;
-  gap: 1rem;
-  align-items: center;
-
-  padding: 1.5rem 0;
-
-  transition:
-    color 180ms ease,
-    padding 180ms ease;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
 }
 
-.archiveIndex a:hover,
-.archiveIndex a:focus-visible {
-  padding-left: 0.8rem;
-  color: var(--red);
+.archiveTile {
+  min-width: 0;
 }
 
-.archiveIndex span,
-.archiveIndex small {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+.archiveTile a {
+  position: relative;
+  display: block;
+  min-height: clamp(360px, 48vw, 650px);
+  overflow: hidden;
+  border: 1px solid rgba(243, 238, 230, 0.2);
 }
 
-.archiveIndex strong {
+.archiveTile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease, filter 500ms ease;
+}
+
+.archiveTileShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 25%, rgba(0, 0, 0, 0.9) 100%);
+  transition: opacity 250ms ease;
+}
+
+.archiveTileNumber {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  color: rgba(255, 255, 255, 0.78);
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: 1rem;
 }
 
-/* Entries */
+.archiveTileCopy {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.archiveTileCopy small,
+.archiveTileCopy strong,
+.archiveTileCopy em {
+  display: block;
+}
+
+.archiveTileCopy small {
+  margin-bottom: 0.9rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.archiveTileCopy strong {
+  max-width: 760px;
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4vw, 4.7rem);
+  font-weight: 400;
+  line-height: 0.94;
+}
+
+.archiveTileCopy em {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  font-style: normal;
+}
+
+.archiveTile a:hover img,
+.archiveTile a:focus-visible img {
+  transform: scale(1.035);
+}
+
+.archiveTileBlack a:hover,
+.archiveTileBlack a:focus-visible {
+  border-color: #d1251b;
+}
+
+.archiveTileLove a:hover,
+.archiveTileLove a:focus-visible {
+  border-color: #d8ef14;
+}
+
+.archiveTileMuziki a:hover,
+.archiveTileMuziki a:focus-visible {
+  border-color: #9f50ff;
+}
+
+.archiveTileWhereLove a:hover,
+.archiveTileWhereLove a:focus-visible {
+  border-color: #ffd31a;
+}
+
+/* Full articles */
 
 .archiveEntries {
-  background: var(--ink);
+  background:
+    linear-gradient(rgba(7, 24, 15, 0.93), rgba(7, 24, 15, 0.93)),
+    url("assets/images/forest-portal.jpg") center / cover fixed;
 }
 
-.archiveEntry {
+.archiveArticle {
+  --article-bg: #171716;
+  --article-surface: #242321;
+  --article-text: #f3eee6;
+  --article-muted: #b8b0a7;
+  --article-accent: #e6b84a;
+  --article-border: rgba(243, 238, 230, 0.2);
+  color: var(--article-text);
+  background: var(--article-bg);
+  border-bottom: 3rem solid transparent;
+  scroll-margin-top: 1rem;
+}
+
+.archiveArticleBlack {
+  --article-bg: #101010;
+  --article-surface: #1c1c1c;
+  --article-text: #f4f0e9;
+  --article-muted: #bdb7ae;
+  --article-accent: #d1251b;
+  --article-border: rgba(209, 37, 27, 0.38);
+}
+
+.archiveArticleLove {
+  --article-bg: #d9ef17;
+  --article-surface: #f0f45a;
+  --article-text: #261713;
+  --article-muted: #56382c;
+  --article-accent: #cf251d;
+  --article-border: rgba(38, 23, 19, 0.3);
+}
+
+.archiveArticleMuziki {
+  --article-bg: #090829;
+  --article-surface: #141042;
+  --article-text: #f3f0ff;
+  --article-muted: #bbb4dd;
+  --article-accent: #b25cff;
+  --article-border: rgba(178, 92, 255, 0.42);
+}
+
+.archiveArticleWhereLove {
+  --article-bg: #0e0e0e;
+  --article-surface: #1d1b18;
+  --article-text: #fff6d7;
+  --article-muted: #d1c5a3;
+  --article-accent: #ffd31a;
+  --article-border: rgba(255, 211, 26, 0.4);
+}
+
+.articleHero {
   display: grid;
-  grid-template-columns: minmax(320px, 0.9fr) 1.1fr;
+  grid-template-columns: minmax(300px, 0.9fr) 1.1fr;
   gap: clamp(3rem, 7vw, 7rem);
   align-items: center;
-
   min-height: 90svh;
   padding: 8rem 7vw;
-
-  border-bottom: 1px solid var(--border);
-  scroll-margin-top: 2rem;
+  background: var(--article-bg);
+  border-bottom: 1px solid var(--article-border);
 }
 
-.archiveEntryReverse {
-  background: var(--surface);
-}
-
-.archiveEntryReverse .archiveEntryArt {
+.articleHeroReverse .articleHeroArt {
   grid-column: 2;
   grid-row: 1;
 }
 
-.archiveEntryReverse .archiveEntryCopy {
+.articleHeroReverse .articleHeroCopy {
   grid-column: 1;
   grid-row: 1;
 }
 
-.archiveEntryArt {
+.articleHeroArt {
   position: relative;
+  overflow: hidden;
+  border: 1px solid var(--article-border);
 }
 
-.archiveEntryArt::after {
+.articleHeroArt::after {
   content: "";
-
   position: absolute;
   inset: 16px;
-
-  border: 1px solid rgba(230, 184, 74, 0.55);
+  border: 1px solid var(--article-accent);
+  opacity: 0.68;
   pointer-events: none;
 }
 
-.archiveEntryArt img {
+.articleHeroArt img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
 
-.archiveEntryCopy {
-  max-width: 720px;
-}
-
-.archiveEntryCopyOnly {
-  grid-column: 1 / -1;
-  max-width: 900px;
-  margin: 0 auto;
+.articleHeroCopy {
+  max-width: 760px;
 }
 
 .archiveEntryMeta {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-
   margin-bottom: 3rem;
 }
 
 .archiveEntryMeta span {
   padding-right: 1rem;
-
-  color: var(--mist);
-  border-right: 1px solid var(--border);
-
+  color: var(--article-muted);
+  border-right: 1px solid var(--article-border);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.16em;
@@ -1716,9 +1824,13 @@ button {
   border-right: 0;
 }
 
-.archiveEntryCopy h2 {
-  margin: 0.7rem 0 2rem;
+.archiveArticle .kicker {
+  color: var(--article-accent);
+}
 
+.articleHeroCopy h2 {
+  margin: 0.7rem 0 2rem;
+  color: var(--article-text);
   font-family: var(--font-display);
   font-size: clamp(3.7rem, 7vw, 7.5rem);
   font-weight: 400;
@@ -1726,46 +1838,131 @@ button {
   letter-spacing: -0.045em;
 }
 
-.archiveEntryCopy h2 span {
+.articleHeroCopy h2 span {
   display: block;
   margin-top: 1rem;
-
-  color: var(--gold);
-
+  color: var(--article-accent);
   font-family: var(--font-body);
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   letter-spacing: 0;
 }
 
 .archiveStandfirst {
-  color: var(--foam) !important;
-
-  font-size: clamp(1.25rem, 2.1vw, 1.6rem) !important;
-  line-height: 1.55 !important;
+  max-width: 680px;
+  margin: 0;
+  color: var(--article-text);
+  font-size: clamp(1.25rem, 2.1vw, 1.65rem);
+  line-height: 1.55;
 }
 
-.archiveEntryCopy > p {
-  color: var(--mist);
-  font-size: 1rem;
-  line-height: 1.9;
+.articleBody {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(5rem, 9vw, 9rem) clamp(1.4rem, 5vw, 4rem);
+  color: var(--article-muted);
+  background: var(--article-bg);
 }
 
-.archiveEntryActions {
+.articleBody h3 {
+  margin: 5rem 0 1.5rem;
+  color: var(--article-text);
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.articleBody h3:first-child {
+  margin-top: 0;
+}
+
+.articleBody h4 {
+  margin: 3rem 0 1rem;
+  color: var(--article-accent);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  font-weight: 400;
+}
+
+.articleBody p,
+.articleBody li {
+  font-size: clamp(1rem, 1.4vw, 1.13rem);
+  line-height: 1.95;
+}
+
+.articleBody em {
+  color: var(--article-text);
+}
+
+.articleBody blockquote {
+  margin: 3rem 0;
+  padding: 2rem clamp(1.5rem, 4vw, 3rem);
+  color: var(--article-text);
+  background: var(--article-surface);
+  border-left: 5px solid var(--article-accent);
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.7vw, 2.25rem);
+  line-height: 1.35;
+}
+
+.articleBody blockquote small,
+.articleBody blockquote cite {
+  display: block;
+  margin-top: 1rem;
+  color: var(--article-muted);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-style: normal;
+}
+
+.articleTracklist,
+.articleCredits {
+  margin: 2rem 0;
+  padding: 2rem 2rem 2rem 3.5rem;
+  color: var(--article-text);
+  background: var(--article-surface);
+  border: 1px solid var(--article-border);
+}
+
+.articleTracklist li,
+.articleCredits li {
+  padding: 0.45rem 0;
+}
+
+.articleSignature,
+.articleFinalLine {
+  color: var(--article-text);
+  font-weight: 700;
+}
+
+.articleCta {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 1rem;
-
-  margin-top: 2.5rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--article-border);
 }
 
-.backToContents {
+.articleButton {
+  color: var(--article-bg);
+  background: var(--article-accent);
+  border: 1px solid var(--article-accent);
+}
+
+.articleButtonSecondary {
+  color: var(--article-text);
+  background: transparent;
+  border: 1px solid var(--article-text);
+}
+
+.archiveArticle .backToContents {
   display: inline-block;
-  margin-top: 3rem;
+  margin-left: auto;
   padding-bottom: 0.3rem;
-
-  color: var(--gold);
+  color: var(--article-accent);
   border-bottom: 1px solid currentColor;
-
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.14em;
@@ -1776,12 +1973,9 @@ button {
 
 .archiveClosing {
   text-align: center;
-
-  background: radial-gradient(
-    circle at 50% 75%,
-    rgba(196, 33, 24, 0.35),
-    var(--ink) 62%
-  );
+  background:
+    linear-gradient(rgba(7, 24, 15, 0.82), rgba(7, 24, 15, 0.94)),
+    url("assets/images/forest-portal.jpg") center / cover no-repeat;
 }
 
 .archiveClosing h2 {
@@ -1790,7 +1984,37 @@ button {
 
 /* Archive responsive */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
+  .archiveIndex,
+  .articleHero {
+    grid-template-columns: 1fr;
+  }
+
+  .archiveTile a {
+    min-height: 520px;
+  }
+
+  .articleHero {
+    min-height: auto;
+    padding: 6rem 6vw;
+  }
+
+  .articleHeroReverse .articleHeroArt,
+  .articleHeroReverse .articleHeroCopy {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .articleHeroReverse .articleHeroArt {
+    order: 0;
+  }
+
+  .articleHeroReverse .articleHeroCopy {
+    order: 1;
+  }
+}
+
+@media (max-width: 650px) {
   .archiveCover {
     min-height: 78svh;
     padding: 8rem 6vw 4rem;
@@ -1801,42 +2025,12 @@ button {
     flex-direction: column;
   }
 
-  .archiveContentsGrid,
-  .archiveEntry {
-    grid-template-columns: 1fr;
-  }
-
-  .archiveEntry {
-    min-height: auto;
-    padding: 6rem 6vw;
-  }
-
-  .archiveEntryReverse .archiveEntryArt,
-  .archiveEntryReverse .archiveEntryCopy {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .archiveEntryReverse .archiveEntryArt {
-    order: 0;
-  }
-
-  .archiveEntryReverse .archiveEntryCopy {
-    order: 1;
-  }
-}
-
-@media (max-width: 480px) {
   .archiveCover h1 {
-    font-size: clamp(4.2rem, 20vw, 6.5rem);
+    font-size: clamp(4rem, 19vw, 6.2rem);
   }
 
-  .archiveIndex a {
-    grid-template-columns: 35px 1fr;
-  }
-
-  .archiveIndex small {
-    grid-column: 2;
+  .archiveTile a {
+    min-height: 440px;
   }
 
   .archiveEntryMeta {
@@ -1847,13 +2041,19 @@ button {
     padding-right: 0.65rem;
   }
 
-  .archiveEntryActions {
+  .articleCta {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .archiveEntryActions .button {
+  .articleCta .button {
+    width: 100%;
     text-align: center;
+  }
+
+  .archiveArticle .backToContents {
+    margin-left: 0;
+    align-self: flex-start;
   }
 }
 
