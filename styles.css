@@ -1621,13 +1621,19 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 500ms ease, filter 500ms ease;
+  transition:
+    transform 500ms ease,
+    filter 500ms ease;
 }
 
 .archiveTileShade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 25%, rgba(0, 0, 0, 0.9) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02) 25%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
   transition: opacity 250ms ease;
 }
 
@@ -4244,5 +4250,122 @@ footer div {
   .exclusiveBuyButton {
     width: 100%;
     text-align: center;
+  }
+}
+
+/* ==================================================
+   COLD BLOODED TRAILER + RSVP
+   Paste this at the end of styles.css
+   ================================================== */
+
+.experienceTrailer {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(7, 24, 15, 0.86), rgba(7, 24, 15, 0.94)),
+    url("assets/images/forest-portal.jpg") center / cover no-repeat;
+}
+
+.experienceTrailer::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: url("assets/images/water-ripples.jpg") center / cover no-repeat;
+  opacity: 0.13;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.experienceTrailerHeading {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.experienceTrailerHeading h2 {
+  margin: 1rem 0 0;
+  color: #f3ead7;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 7.5vw, 7.6rem);
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+.experienceTrailerHeading h2 i {
+  color: #d99201;
+  font-style: normal;
+}
+
+.experienceVideo {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #050806;
+  border: 1px solid rgba(217, 146, 1, 0.45);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.38);
+}
+
+.experienceVideo iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.experienceDetails {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 1.5rem auto 2rem;
+  color: #c8d0bd;
+}
+
+.experienceDetails p {
+  max-width: 540px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.experienceRsvpButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 58px;
+  margin: 0 auto;
+  padding: 0.9rem 1.25rem;
+  color: #fff8eb;
+  background: #bd251c;
+  border: 1px solid #df5549;
+  font-size: clamp(0.72rem, 1.4vw, 0.92rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.experienceRsvpButton:hover,
+.experienceRsvpButton:focus-visible {
+  background: #e03a2f;
+  transform: translateY(-2px);
+}
+
+.experienceRsvpButton span {
+  font-size: 1.25rem;
+}
+
+@media (max-width: 700px) {
+  .experienceDetails {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .experienceRsvpButton {
+    gap: 1rem;
   }
 }

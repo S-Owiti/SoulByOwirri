@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>RSVP | Cold Blooded Exclusive Experience</title>
+    <meta
+      name="description"
+      content="RSVP for Owirri's Cold Blooded Exclusive Experience on 31 October 2026 in Westlands, Nairobi."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://soulbyowirri.co.ke/rsvp.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Cold Blooded Exclusive Experience" />
+    <meta
+      property="og:description"
+      content="Enter the Underwater Matriarchy on 31 October 2026 in Westlands, Nairobi."
+    />
+    <meta property="og:url" content="https://soulbyowirri.co.ke/rsvp.html" />
+    <meta
+      property="og:image"
+      content="https://soulbyowirri.co.ke/assets/images/cold-blooded-cover.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Comic+Neue:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css?v=8" />
+    <link rel="stylesheet" href="rsvp.css?v=1" />
+    <script src="rsvp.js?v=2" defer></script>
+  </head>
+
+  <body class="rsvpPage rsvpLocked">
+    <nav class="nav rsvpNav" aria-label="Primary navigation">
+      <a href="index.html#top" class="wordmark">OWIRRI<span>.</span></a>
+      <a class="navCta" href="index.html">Return Home</a>
+    </nav>
+
+    <main>
+      <header class="rsvpHero">
+        <p class="kicker">31 OCTOBER 2026 · WESTLANDS, NAIROBI</p>
+        <h1>
+          Enter the<br />
+          <span>Underwater Matriarchy.</span>
+        </h1>
+        <p>
+          A Cold Blooded exclusive experience by Owirri.<br />
+          5:00 PM–9:00 PM. The exact venue will be emailed to confirmed guests.
+        </p>
+      </header>
+
+      <section
+        class="rsvpFormSection"
+        id="rsvpForm"
+        aria-labelledby="rsvpTitle"
+      >
+        <div class="rsvpFormIntro">
+          <p class="kicker">YOUR NAME IN THE TIDE</p>
+          <h2 id="rsvpTitle">RSVP to descend.</h2>
+
+          <p>
+            This is an intimate experience with limited space. RSVP early and
+            include every member of your coven so we can prepare for your
+            arrival.
+          </p>
+
+          <div class="rsvpEventDetails">
+            <p><strong>Date</strong><span>31 October 2026</span></p>
+            <p><strong>Time</strong><span>5:00–9:00 PM</span></p>
+            <p>
+              <strong>Location</strong
+              ><span>Westlands · Exact venue by email</span>
+            </p>
+            <p>
+              <strong>RSVP closes</strong><span>30 October · 11:59 PM EAT</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="rsvpFormCard">
+          <form
+            class="rsvpForm"
+            id="exclusiveRsvpForm"
+            action="https://formspree.io/f/xdeawvka"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Cold Blooded Experience RSVP"
+            />
+            <input
+              type="hidden"
+              name="event"
+              value="Cold Blooded Exclusive Experience — 31 October 2026"
+            />
+
+            <div class="rsvpField">
+              <label for="guestName">Full name</label>
+              <input
+                id="guestName"
+                name="name"
+                type="text"
+                autocomplete="name"
+                required
+              />
+            </div>
+
+            <div class="rsvpField">
+              <label for="guestEmail">Email address</label>
+              <input
+                id="guestEmail"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+              <small>The secret venue will be sent here.</small>
+            </div>
+
+            <div class="rsvpField">
+              <label for="guestPhone">WhatsApp number</label>
+              <input
+                id="guestPhone"
+                name="whatsapp_number"
+                type="tel"
+                autocomplete="tel"
+                required
+              />
+            </div>
+
+            <div class="rsvpField">
+              <label for="guestInstagram"
+                >Instagram handle <span>(optional)</span></label
+              >
+              <input
+                id="guestInstagram"
+                name="instagram_handle"
+                type="text"
+                placeholder="@yourhandle"
+              />
+            </div>
+
+            <div class="rsvpField">
+              <label for="guestTotal">Total number attending</label>
+              <input
+                id="guestTotal"
+                name="total_attending"
+                type="number"
+                min="1"
+                max="20"
+                value="1"
+                required
+              />
+            </div>
+
+            <div class="rsvpField rsvpFieldFull">
+              <label for="guestCoven">Who is descending with you?</label>
+              <textarea
+                id="guestCoven"
+                name="accompanying_guests"
+                rows="4"
+                required
+              ></textarea>
+              <small
+                >List everyone attending with you. Enter “Just me” if you are
+                arriving solo.</small
+              >
+            </div>
+
+            <div class="rsvpField rsvpFieldFull">
+              <label for="guestNeeds"
+                >Accessibility or dietary note <span>(optional)</span></label
+              >
+              <textarea
+                id="guestNeeds"
+                name="accessibility_or_dietary_note"
+                rows="3"
+              ></textarea>
+            </div>
+
+            <label class="rsvpConsent rsvpFieldFull">
+              <input
+                type="checkbox"
+                name="dress_code_agreement"
+                value="Agreed"
+                required
+              />
+              <span>
+                I understand that the dress code is Underwater Matriarchy and
+                will arrive dressed for the world.
+              </span>
+            </label>
+
+            <button class="button rsvpSubmit rsvpFieldFull" type="submit">
+              Write My Name Into the Tide
+            </button>
+
+            <p class="rsvpDeadline rsvpFieldFull">
+              RSVP closes 30 October 2026 at 11:59 PM EAT.
+            </p>
+          </form>
+
+          <div class="rsvpClosedMessage" id="rsvpClosedMessage" hidden>
+            <p class="kicker">THE PORTAL HAS CLOSED</p>
+            <h2>RSVPs have ended.</h2>
+            <p>
+              The tide has turned toward the gathering. Follow Owirri for the
+              next entrance into the universe.
+            </p>
+            <a class="button rsvpSubmit" href="index.html">Return Home</a>
+          </div>
+
+          <div
+            class="rsvpSuccessMessage"
+            id="rsvpSuccessMessage"
+            hidden
+            aria-live="polite"
+            tabindex="-1"
+          >
+            <p class="kicker">YOUR NAME HAS BEEN WRITTEN INTO THE TIDE</p>
+            <h2>You are on the list.</h2>
+            <p>
+              Your RSVP has been received. The exact Westlands venue and final
+              entry details will be sent to your email, so keep an eye on your
+              inbox and spam folder.
+            </p>
+            <p>
+              Remember: the world is Underwater Matriarchy. Arrive as merfolk,
+              sea royalty or a creature from your own deep-water mythology.
+            </p>
+            <strong>See you beneath the surface.</strong>
+            <a class="button rsvpSubmit" href="index.html">Return Home</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="rsvpDressCode" aria-labelledby="dressCodeTitle">
+        <p class="kicker">DRESS CODE</p>
+        <h2 id="dressCodeTitle">Underwater Matriarchy</h2>
+        <p>
+          Come as a mermaid, merman, sea sovereign or creature of your own
+          underwater mythology. Think scales, pearls, shells, flowing
+          silhouettes, wet-look textures, oceanic colour, treasure and beautiful
+          danger.
+        </p>
+        <strong>
+          Jeans and a T-shirt are not on theme. Commit to the fantasy. There
+          will be a gift for the best-dressed guest.
+        </strong>
+      </section>
+    </main>
+
+    <!-- Merch invitation overlay -->
+    <div
+      class="merchGate"
+      id="merchGate"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="merchGateTitle"
+    >
+      <div class="merchGateBackdrop"></div>
+
+      <div class="merchGatePanel" role="document">
+        <button
+          class="merchGateClose"
+          id="merchGateClose"
+          type="button"
+          aria-label="Continue to free RSVP"
+        >
+          ×
+        </button>
+
+        <div class="merchGateHeader">
+          <p class="kicker">LIMITED ARTEFACTS FROM THE DEEP</p>
+          <h2 id="merchGateTitle">Take a piece of the world with you.</h2>
+          <p>
+            Before entering the RSVP portal, explore the limited artefacts
+            created for the Cold Blooded era. Every purchase supports the making
+            of Owirri’s debut album.
+          </p>
+        </div>
+
+        <div class="merchGateGrid">
+          <article class="merchGateCard merchComic">
+            <div class="merchCardVisual" aria-hidden="true">
+              <span>ISSUE 001</span>
+            </div>
+            <div class="merchCardCopy">
+              <p class="kicker">THE FIRST DESCENT</p>
+              <h3>The Cold Blooded Codex</h3>
+              <p>A limited comic artefact from the album universe.</p>
+              <strong>KES 850</strong>
+              <span class="merchComingSoon">Purchase link coming soon</span>
+            </div>
+          </article>
+
+          <article class="merchGateCard merchJewellery">
+            <div class="merchCardVisual" aria-hidden="true">
+              <span>FROM THE DEEP</span>
+            </div>
+            <div class="merchCardCopy">
+              <p class="kicker">TREASURES OF THE DEEP</p>
+              <h3>Statement Jewellery</h3>
+              <p>Necklaces, chokers, waist beads and arm cuffs.</p>
+              <a
+                class="merchBuyButton"
+                href="https://theyellowroom.hustlesasa.shop/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Explore Jewellery ↗</a
+              >
+            </div>
+          </article>
+
+          <article class="merchGateCard merchRelics">
+            <div class="merchCardVisual" aria-hidden="true">
+              <span>SMALL RELICS</span>
+            </div>
+            <div class="merchCardCopy">
+              <p class="kicker">RELICS OF THE MATRIARCHY</p>
+              <h3>Adorn the Details</h3>
+              <p>Limited bracelets, anklets and rings.</p>
+              <a
+                class="merchBuyButton"
+                href="https://theyellowroom.hustlesasa.shop/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Explore the Relics ↗</a
+              >
+            </div>
+          </article>
+        </div>
+
+        <button class="merchSkipButton" id="merchSkipButton" type="button">
+          Continue to Free RSVP →
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
