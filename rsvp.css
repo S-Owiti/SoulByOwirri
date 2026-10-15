@@ -344,9 +344,12 @@ body.rsvpLocked {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  align-items: stretch;
 }
 
 .merchGateCard {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.05);
@@ -354,25 +357,30 @@ body.rsvpLocked {
 }
 
 .merchCardVisual {
-  display: grid;
-  place-items: center;
-  min-height: 160px;
-  padding: 1rem;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   background:
-    radial-gradient(circle at 70% 20%, rgba(217, 146, 1, 0.38), transparent 30%),
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(217, 146, 1, 0.38),
+      transparent 30%
+    ),
     linear-gradient(145deg, #132e1c, #07180f);
 }
 
-.merchCardVisual span {
-  color: rgba(243, 234, 215, 0.18);
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 4rem);
-  line-height: 0.9;
-  text-align: center;
+.merchCardVisual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
 }
 
 .merchCardCopy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 1.4rem;
 }
 
@@ -385,7 +393,6 @@ body.rsvpLocked {
 }
 
 .merchCardCopy > p:not(.kicker) {
-  min-height: 3.3rem;
   color: var(--rsvp-mist);
   line-height: 1.6;
 }
@@ -401,22 +408,15 @@ body.rsvpLocked {
 .merchComingSoon {
   display: block;
   width: 100%;
+  margin-top: auto;
   padding: 0.85rem 1rem;
+  color: var(--rsvp-cream);
+  background: var(--rsvp-red);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-align: center;
   text-transform: uppercase;
-}
-
-.merchBuyButton {
-  color: var(--rsvp-cream);
-  background: var(--rsvp-red);
-}
-
-.merchComingSoon {
-  color: var(--rsvp-mist);
-  border: 1px solid var(--rsvp-border);
 }
 
 .merchSkipButton {
