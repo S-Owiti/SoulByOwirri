@@ -569,11 +569,11 @@ button {
 
 .featuredRelease {
   display: grid;
-  grid-template-columns: minmax(320px, 0.9fr) 1.1fr;
-  gap: clamp(3rem, 7vw, 7rem);
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
   align-items: center;
 
-  max-width: 1250px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -582,6 +582,8 @@ button {
   overflow: hidden;
   background: var(--ink);
   border: 1px solid var(--border);
+  width: 480px;
+  height: 480px;
 }
 
 .featuredReleaseArt::after {
@@ -596,6 +598,7 @@ button {
 
 .featuredReleaseArt img {
   width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
 
