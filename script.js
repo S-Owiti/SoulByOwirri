@@ -185,3 +185,27 @@ document.querySelector("#year").textContent = new Date().getFullYear();
     }
   });
 })();
+
+/* CONTACT OPTIONS DIALOG */
+
+(() => {
+  const dialog = document.getElementById("contactDialog");
+  const openButton = document.getElementById("openContactDialog");
+  const closeButton = document.getElementById("closeContactDialog");
+
+  if (!dialog || !openButton || !closeButton) return;
+
+  openButton.addEventListener("click", () => {
+    dialog.showModal();
+  });
+
+  closeButton.addEventListener("click", () => {
+    dialog.close();
+  });
+
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) {
+      dialog.close();
+    }
+  });
+})();
